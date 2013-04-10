@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Lista de clientes{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div id="headline-page">
+		<h1>Lista de clientes</h1> <a href="/cliente/" class="btn">Nuevo 	cliente</a>
+	</div>
+
+	<div class="row">
+		<table class="table tableCell table-hover">
+			<tr>
+				<th>Id</th>
+				<th>Nombre</th>
+				<th>Direccion</th>
+				<th>Telefono</th>
+				<th>Usuario</th>
+				<th>Ocupacion</th>
+				<th>Opciones</th>
+			</tr>
+			{% for cliente in clientes %}
+			<tr>
+				<td>
+					<a href="/cliente/{{ cliente.id }}/">{{ cliente.id }}</a>
+				</td>
+				<td>{{ cliente.nombre }}</td>
+				<td>{{ cliente.ciudad }}, {{ cliente.colonia }}</td>
+				<td>{{ cliente.telefono }}</td>
+				<td>{{ cliente.usuario }}</td>
+				<td>{{ cliente.ocupacion }}</td>
+				<td><a href="/cliente/delete/{{ cliente.id }}/">Eliminar</a></td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+</div>
+{% endblock %}

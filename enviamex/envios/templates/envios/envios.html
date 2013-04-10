@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Lista de envios{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div id="headline-page">
+		<h1>Lista de envios</h1>
+	</div>
+	<div class="row">
+		{% for envio in envios %}
+			{{ envio.descripcion }}</br>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}

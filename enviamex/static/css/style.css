@@ -1,0 +1,434 @@
+﻿/* Import Basic Files
+================================================ */
+@import url("bootstrap.css");  
+@import url("layerslider.css");  
+@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,200,300,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+/* Site Styles
+================================================ */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{font-size:100%;border:0;outline:0;vertical-align:baseline;background:transparent;margin:0;padding:0}
+html{height:100%}
+body{font-size:13px;font-weight:400;color:#58595b;background:#fff;font-family:'Open Sans',sans-serif}
+blockquote,q{quotes:none}
+:focus{outline:0}
+input{border:0;vertical-align: middle}
+del{text-decoration:line-through}
+table{border-collapse:collapse;border-spacing:0}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+*{margin:0;padding:0}
+a{color:#368ccc;outline:none;text-decoration:underline}
+a:hover{text-decoration:none}
+p{margin:0 0 21px;padding:0;line-height:1.6}
+ins,a:hover{text-decoration:none}
+.floatleft{float:left}
+.floatright{float:right}
+#wrapper{width:100%;overflow:hidden;position:relative}
+
+/* header */
+#header{height:315px;padding:0px;background:url(../img/02.png) repeat-x top #fff}
+#header.main{height:603px;background:url(../img/01.png) repeat-x top #fff}
+#header .header-bg{width:100%;height:100%;background:url(../img/06.jpg) no-repeat center top}
+#header.main .header-bg{background:url(../img/05.jpg) no-repeat center top}
+#header .container{position:relative;}
+#header.main .decoration{position:absolute;top:266px;} 
+#header.main .dec-left{background:url(../img/07.jpg) no-repeat bottom right;left:-320px;width:320px;height:280px}
+#header.main .dec-right{background:url(../img/08.jpg) no-repeat bottom right;right:-340px;width:340px;height:337px}	
+	/* logo */
+	#logo{padding:46px 0 35px 0;text-align:center}   
+	/* Social Contact */
+	#header .social-icons{position:relative;margin-top:31px;right:10px;text-align:right}
+	#wrapper .social-icons li,.social-icons li{width:24px;height:24px;list-style:none;overflow:hidden;display:inline-block;margin:0 3.5px;padding:0}
+	#wrapper .social-icons li a,.social-icons li a{position:relative;top:-24px;display:block;height:0;padding-top:48px;overflow:hidden;background-repeat:no-repeat}
+		.facebook a{background-image:url(../img/s1.png)}
+		.twitter a{background-image:url(../img/s2.png)}
+		.linkedin a{background-image:url(../img/s3.png)}
+		.googleplus a{background-image:url(../img/s4.png)}
+		.youtube a{background-image:url(../img/s5.png)}
+		.rss a{background-image:url(../img/s6.png)}
+		.skype a{background-image:url(../img/s7.png)}
+		.pinterest a{background-image:url(../img/s8.png)}
+		.plus a{background-image:url(../img/s9.png)}
+		.vimeo a{background-image:url(../img/s10.png)}
+	#wrapper  .container .social-icons {position:relative;left:-3.5px}   
+	/* Details */
+	.contact-details{position:relative;margin-top:11px;right:10px;font-family:'Open Sans',sans-serif;color:#808285}
+	.contact-details li{list-style:none;text-align:right}
+	.contact-details a{font-family:'Open Sans',sans-serif;text-decoration:underline;color:#4ca6e8}
+	.contact-details a:hover{text-decoration:none}
+	/* Search */
+	.search-form{float:right;position:relative;top:47px;right:10px;width:192px;height:27px;z-index:999}
+		.search-form input{position:absolute;top:0}
+		.search-text-box{font-family:'Open Sans',sans-serif;line-height:2;color:#808285;left:0px;padding:0 10px;width:129px;height:27px;background:url(../img/03.png) repeat-x}
+		.search-text-submit{cursor:pointer;right:0px;width:43px;height:27px;background:url(../img/04.png) no-repeat}
+	/* Menu */
+	#menu {background:#ff0000;height:49px;position:relative;z-index:2;}   
+	#menu li{float:left;list-style:none;position:relative}
+	#menu li a{font-family:'Open Sans',sans-serif;text-transform:uppercase;text-decoration:none;color:#fff;padding:15px 10px 16px;display:block}
+	#menu li a:hover{background:#da0606}
+	.select-menu{background:#ff0000;padding:10px}
+	.select-menu select{width:100%;padding:5px}
+	/* Main Slider */
+	.main-slider{display:none;width:940px;height:416px;background:url(../img/09.jpg) no-repeat -0px -4px}
+	.main  .main-slider{display:block}
+	#menu ul{display:none;z-index:9999;width:190px;position:absolute;top:100%;left:0;border-bottom:5px solid #3681b9}	
+	#menu ul li{float:none;}
+	#menu li ul li a{display:block;padding:10px;text-transform:none;background:rgba(0,0,0,0.8);background:#000\0/;}
+	#menu li ul li a:hover{background:rgba(0,0,0,0.5)}
+/* slider */	
+.ls-bottom-slidebuttons{position:absolute;bottom:15px;right:0px;text-align:right;width:100px;height:30px;display:block;}	
+.ls-bottom-slidebuttons a{background:#c3c2c2;width:11px;height:11px;display:inline-block;margin-right:4px}	
+.ls-bottom-slidebuttons a.ls-nav-active{background:#368ccc}	
+.ls-s1{width:100%;text-align:right}
+.ls-s2{width:481px;height:220px;}	
+.ls-s3{color:#fff;text-decoration:none;font-family:'Yanone Kaffeesatz',sans-serif;font-size:23px;display:inline-block;padding-right:30px;background:url(../img/52.png) no-repeat right}
+.ls-s4{color:#fff;width:320px}
+.ls-s5{color:#fff;font-family:'Open Sans',sans-serif;font-size:34px;text-transform: uppercase;text-decoration:none}
+.ls-inner{background:transparent;background:none!important}
+/* footer */
+#footer{clear:both;background:url(../img/12.png) repeat-x #efefec}
+#footer section{position:relative;padding:0 0 30px}
+#footer a{text-decoration:none}
+#footer a:hover{text-decoration:underline}
+#footer article{color:#6d6e71;text-align:left;padding:34px 0 0}
+#footer  h3.title{font-family:'Yanone Kaffeesatz',sans-serif;font-weight:400;font-size:19px}
+#footer .link{color:#368ccc}
+#footer .social-icons li {margin:20px 7px 0 0}
+#footer .navblock li{list-style:none;border-bottom:1px dotted #ababaa}
+#footer .navblock a{display:block;padding:7px 0 7px 15px;background:url(../img/11.png) no-repeat left center}
+#footer .slogo{margin-bottom:10px}
+.footer-line{background:#e8e6e9;color:#6d6e71;font-size:12px;overflow:hidden}
+.footer-line div.row-fluid div{padding:30px 0 20px}
+.footer-line a{color:#6d6e71;font-size:12px}
+.top{margin-left:20px;padding-left:10px;background:url(../img/13.png) no-repeat left center}	
+/* crumbs */	
+#headline-page{position:relative;top:0px;margin-top:-108px;width:100%;height:96px;}	
+#crumbs{position:relative;top:-15px;}
+#crumbs a{font-size:11px}
+	.active{color:#808285}	
+/* arrow-up */	
+.back-top{position:fixed;bottom:115px;right:50%;margin-right:-650px;width:101px;height:84px;background:url(../img/14.png) no-repeat}
+.back-top a{display:block;width:100%;height:100%}
+/* Base tag */
+#content{position:relative}
+#content ul{margin-bottom:13px}
+#content li{list-style:none;padding:2px 0 15px 24px;color:#368ccc}
+#content img.alignleft{display:inline;float:left;margin-right:24px;margin-top:4px}
+#content img.alignright{display:inline;float:right;margin-left:24px;margin-top:4px}
+#content img.aligncenter{clear:both;display:block;margin-left:auto;margin-right:auto}
+#content .alignleft{text-align:left}
+#content .alignright{text-align:right}
+#content .aligncenter{text-align:center}
+h1,h2,h3,h4,h5{font-family:'Yanone Kaffeesatz',sans-serif;color:#368ccc;font-weight:400;margin:0 0 12px;padding:0}
+h1{font-size:35px}
+h2{font-size:28px}   
+h3{font-size:23px}
+h4{font-size:19px}
+h5{font-size:16px}
+div.title{background:url(../img/10.png) no-repeat bottom left;padding:0 0 23px;margin:0 0 23px;width:100%}
+div.title h2{font-size:28px;margin:0}
+div.headline{clear:both;margin-top:7px}
+div.headline h4{color:#6d6e71}
+.purchase{display:block;color:#6d6e71;position:relative;top:-15px;padding-bottom:45px;font-family:'Yanone Kaffeesatz',sans-serif;font-size:26px}
+/* List styles */
+#content .check-list li{background:url(../img/li1.png) no-repeat 0 6px}
+#content .arrow-list li{background:url(../img/li2.png) no-repeat 0 6px}
+#content .bullet-list li{background:url(../img/li3.png) no-repeat 2px 8px }
+#content .plus-list li{background:url(../img/li4.png) no-repeat 2px 4px}
+#content .minus-list li{background:url(../img/li5.png) no-repeat 2px 4px}
+#content .star-list li{background:url(../img/li6.png) no-repeat 0 5px}
+#content .service-list li{background:url(../img/li7.png) no-repeat 0 7px}		
+#content .link-list{padding-bottom:15px}
+#content .link-list li{background:url(../img/li8.png) no-repeat 0 12px;padding:0;border-bottom:1px dotted #b0b0b0}	
+#content .link-list li a{display:block;text-decoration:none;line-height:20px;padding:8px 0 7px 15px}
+#content .post-list{margin-bottom:25px}  
+#content .post-list li{color:#6d6e71;border-bottom:1px dotted #b0b0b0;padding:0px 0 7px 0;margin-bottom:18px}
+#content .post-list li a.headline{display:block;font-size:15px;padding-bottom:10px;text-decoration:none}
+#content .post-list li a.headline:hover{text-decoration:underline}
+#content .post-list li time{display:block;padding-bottom:15px;color:#565656;font-size:14px;font-family:'Yanone Kaffeesatz',sans-serif;font-weight:700;font-style:italic}	
+#content .sitemap{padding-bottom:20px}
+#content .sitemap li{color:#6d6e71;background:url(../img/li7.png) no-repeat 2px 13px;border-bottom:1px dotted #b0b0b0;padding:8px 0 7px 25px}
+#content .sitemap li a{text-decoration:none}
+#content .sitemap li a:hover{text-decoration:underline}
+/* calendar */
+.calendar{width:100%;background:url(../img/43.png) repeat-x bottom;padding-bottom:2px}
+.calendar caption{padding:10px 0;color:#6d6e71;font-weight:bold;background:url(../img/43.png) repeat-x bottom}
+.calendar thead {font-weight:bold;background:url(../img/43.png) repeat-x bottom}
+.calendar thead td{padding:11px 0}
+.calendar thead,.calendar  tbody{color:#6d6e71;}
+.calendar td{padding:8px 0;text-align:center}
+.calendar tbody tr:last-child td{padding:5px 0 7px}
+.nav-calendar {position:absolute;top:-20px;font-size:35px;font-family:Tahoma;text-decoration:none;font-weight:800;line-height:35px}
+.prew-calendar {left:5px}
+.next-calendar {right:5px}
+/* Posts */
+.post{position:relative;background:url(../img/42.png) no-repeat right bottom;margin-bottom:20px;padding-bottom:10px}
+.hgroup{position:relative;border-bottom:1px solid #ebeaea;padding-bottom:10px;margin-bottom:20px}
+#wrapper .container  .post .social-icons{position:absolute;top:5px;right:10px;text-align:right}
+.post .social-icons.rel{position:relative;right:0px}
+/* Twitter */   
+#content .twitter-list{padding-bottom:5px}  
+#content .twitter-list li{padding:5px 0 15px 40px;margin-bottom:10px;border-bottom:1px dotted #b0b0b0;background:url(../img/li9.png) no-repeat 3px 10px}
+#content .twitter-list li p{margin:0px;color:#58595b}
+#content .twitter-list li  span{display:block}
+/* Pagenavi */
+.wp-pagenavi{height:50px;text-align:right;font-family:'Yanone Kaffeesatz',sans-serif;}
+.wp-pagenavi a{font-size:17px;text-decoration:none;padding:0 2px;margin:0 5px}
+.wp-pagenavi a:hover{color:#76797d}
+.wp-pagenavi span{font-size:17px;padding:0 5px;background:#76797d;color:#fff}
+/* Dropcap */
+.dropcap{float:left;text-align:center;margin:5px 20px 10px 0;width:59px;height:59px;font-size:39px;background:#368ccc;color:#fff;font-family:'Yanone Kaffeesatz',sans-serif}
+.dropcap2{float:left;text-align:center;margin:5px 20px 10px 0;width:59px;height:59px;font-size:39px;background:#dcdee0;color:#368ccc;font-family:'Yanone Kaffeesatz',sans-serif} 
+/* Highlight */
+.highlight1{padding:0 2px;background:#368ccc;color:#fff}
+.highlight2{padding:0 2px;background:#ff0000;color:#fff}
+.highlight3{padding:0 2px;background:#fcff00}
+/* Blockquote */
+blockquote{border-left:6px solid #368ccc;font-size:16px;font-style:italic;background:#ededea;padding:24px 40px 25px 30px;margin-bottom:20px}
+.blockquote-left{float:left;margin: 15px 20px 0 0;width:40%}
+.blockquote-right{float:right;margin: 15px 0px 0 20px;width:40%}
+/* Navigation */
+#content .navigation li {padding:0;margin:0 0 1px}
+#content .navigation li a{color:#6d6e71;font-family:'Yanone Kaffeesatz',sans-serif;font-size:19px;text-decoration:none;border-left:8px solid #ededea;background:#ededea;padding:13px 15px;display:block;}
+#content .navigation li a:hover,#content .navigation li.active a{color:#368ccc;border-left:8px solid #368ccc}
+/* Thumbnails */
+.thumbnail{max-width:100%;text-align:center;padding:6px;background:#fbfafb;border:1px solid #e7e7e7;line-height:0;margin-bottom:12px}
+.thumbnail  img{max-width:100%}
+/* Tagcloud */
+.tagcloud{text-align:center;padding-bottom:15px}
+.tagcloud a{margin:0 1px;text-decoration:none;color:#58595b;font-size:13px;padding:10px 5px;line-height:4;background:#f6f6f6}
+.tagcloud a:hover{background:#4a7eb7;color:#fff}
+/* Form */
+.form-padding{padding:0 30px 0 0;}
+label {color:#368ccc;font-size:13px;display:block;padding-bottom:8px}
+.form-text,textarea{font-family:'Open Sans',sans-serif;width:100%;margin-right:50px;padding:15px;display:block;color:#aaa2a2;border:1px solid #eeeeeb;margin-bottom:20px}
+textarea{width:100%}
+/* Buttoms */
+.button{font-family:'Yanone Kaffeesatz';color:#fff;display:inline-block;text-decoration:none;margin-bottom:22px}
+	.button.large{font-size:23px;padding:12px 23px;float:left}
+	.button.under-page{font-size:23px;padding:10px 0;width:100%;display:block}
+	.button.medium{font-size:20px;padding:10px 20px}
+	.button.small{font-size:17px;padding:8px 21px}
+	.button.blue{background:#368ccc}
+	.button.blue:hover{background:#3481ba}
+	.button.gray{background:#5f6061}
+	.button.gray:hover{background:#4e4f50}
+	.button.red{background:#ff0000}	
+	.button.red:hover{background:#e90000}
+/* contact line */
+.card{padding-bottom:30px}
+.contact-line{padding:10px 25px;display:block;color:#808285;border-bottom:1px dotted #c5bcbc}	
+	.c1{background:url(../img/c1.png) no-repeat 5px 12px}
+	.c2{background:url(../img/c2.png) no-repeat 5px 12px}
+	.c3{background:url(../img/c3.png) no-repeat 4px 15px}
+	.c3 a{text-decoration:none;}
+	.c3 a:hover{text-decoration:underline}
+/* widget slider */
+.nav-slider{position:absolute;top:-80px;font-size:35px;font-family:Tahoma;text-decoration:none;font-weight:800;line-height:35px}
+.prew-slide{right:5px;margin-right:15px}
+.next-slide{right:5px}
+.sidebar-slide .nav-slider{top:-43px}
+/* Media */
+.video11{width:860px;height:484px}
+.video10{width:780px;height:439px}
+.video9{width:700px;height:394px}
+.video8{width:620px;height:349px}
+.video7{width:540px;height:304px}
+.video6{width:460px;height:259px}
+.video5{width:380px;height:214px}
+.video4{width:300px;height:169px}
+.video3{width:220px;height:124px}
+.video2{width:140px;height:79px}
+.video-shortcode{padding-bottom:20px}
+.video-shortcode iframe{width:100%;height:100%;}
+.carousel{position:relative;line-height:1;margin-bottom:23px}
+.carousel-inner{overflow:hidden;width:100%;padding:0px;margin:0px;position:relative}
+.carousel .item{display:none;position:relative;-webkit-transition:1s ease-in-out left;-moz-transition:1s ease-in-out left;-o-transition:1s ease-in-out left;transition:1s ease-in-out left}
+.carousel .item > img{display:block;line-height:1;max-width:100%}
+.carousel-caption{position:absolute;left:0;right:0;bottom:0;background:rgba(0,0,0,0.75);filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr='#000000', EndColorStr='#000000');padding:23px 19px;margin:3px 5px}
+.carousel-caption h4,.carousel-caption p{color:#fff;line-height:20px}   
+.carousel-caption h4{margin:0 0 5px}
+.carousel-caption p{margin-bottom:0}
+.carousel-control{position:absolute;top:50%;left:5px;width:40px;height:40px;margin-top:-20px;font-size:35px;font-family:Tahoma;text-decoration:none;font-weight:800;line-height:35px;color:#368ccc;text-align:center;background:#f2f0f2}
+.carousel-control.right{left:auto;right:6px}
+.carousel-control:hover{color:#ff0000;text-decoration:none;opacity:0.9;filter:alpha(opacity=90)}
+.carousel .active,.carousel .next,.carousel .prev{display:block}
+.carousel .next,.carousel .prev{position:absolute;top:0;width:100%}
+.carousel .active,.carousel .next.left,.carousel .prev.right{left:0}
+.carousel .next,.carousel .active.right{left:100%}
+.carousel .prev,.carousel .active.left{left:-100%}
+.thumbnail .carousel{margin-bottom:0px}
+.thumbnail .carousel-caption{padding:15px 15px;text-align:left;margin:0}
+.thumbnail .carousel-control{left:0;}
+.thumbnail .carousel-control.right{left:auto;right:0}
+/* Review */
+.review-slider{margin:0px;padding:25px}
+.review-slider .item{margin-bottom:100px}
+	.blockquote-line{position:absolute;left:0px;top:0;width:100%;background:url(../img/15.png) no-repeat bottom left #ebeaea;-webkit-transition: 0.1s ease-in-out height;-moz-transition: 0.3s ease-in-out height;-ms-transition: 0.3s ease-in-out height;-o-transition: 0.3s ease-in-out height;transition: 0.3s ease-in-out height}
+	.blockquote-pattern{width:100%;height:100%;background:url(../img/16.png) no-repeat bottom right}
+.blockquote{padding-bottom:15px;border:0;font-size:13px;font-style:italic;line-height:1.6;margin:0;overflow:hidden}
+.md{display:none;position:absolute;bottom:-90px}
+.client-pic{margin-left:25px}
+.md-name{position:absolute;top:10px;z-index:2;width:160px;left:70px;font-size:14px;font-weight:600}
+.md-name strong{color:#368ccc}
+.company-name{font-size:12px;padding-top:4px;clear:both;font-weight:300}		
+/* Tabs */
+.tab-content > .tab-pane,.pill-content > .pill-pane{display:none}
+.nav > li > a,.tab-content > .active,.pill-content > .active{display:block}
+.tab-content{overflow:auto}
+#content .nav-tabs{position:relative;top:1px;left:1px;margin:0;float:left;display:table}
+#content .nav-tabs li{padding:0;margin-right:1px;float:left;display:list-item;border-bottom:5px solid #368ccc;background:#ededea}
+#content .nav-tabs li.active{background:#368ccc}
+#content .nav-tabs li.active a{color:#fff}
+#content .nav-tabs li a{display:block;padding:15px 14px}
+.nav-tabs a{font-family:'Yanone Kaffeesatz',sans-serif;color:#368ccc;font-size:19px;font-weight:400;text-decoration:none} 
+.tab-content{position:relative;clear:both;margin-bottom:20px}
+.tab-pane{padding:28px 20px 36px;border-top:1px solid #e0e0e0;border-right:1px solid #e0e0e0;border-left:1px solid #e0e0e0}
+.bottom-pattern-line{position:absolute;bottom:0px;left:-1px;width:100%;height:36px;background:url(../img/38.png) no-repeat 0 0px #fff}
+.bottom-pattern-right{position:absolute;bottom:0px;right:1px;width:35px;height:21px;background:url(../img/39.png) no-repeat left bottom}	
+/* Alert */
+.alert{position:relative;padding:16px 60px;margin-bottom:27px;background-repeat:no-repeat;background-position:18px 12px;border:1px solid #d7d6d6}
+.close-alert{width:18px;height:18px;display:block;position:absolute;top:16px;right:18px}
+	.general{background-image:url(../img/27.png);background-color:#fbdd96}
+	.general .close-alert{background:url(../img/32.png) no-repeat}	
+	.info{background-image:url(../img/28.png);background-color:#e6ecf7}						
+	.info .close-alert{background:url(../img/33.png) no-repeat}
+	.success{background-image:url(../img/30.png);background-color:#e5f4cb}
+	.success .close-alert{background:url(../img/34.png) no-repeat}
+	.error{background-image:url(../img/31.png);background-color:#ffc9c9}
+	.error .close-alert{background:url(../img/35.png) no-repeat}	
+/* Awards */   
+.award{position:relative;max-width:100%;overflow:hidden;display:block;text-decoration:none;margin-bottom:30px;opacity: 0.5;}	
+.award:hover{margin:0;padding-bottom:3px;background:url(../img/26.png) repeat-x bottom #f8f4f4;border-bottom:0px}	
+.award img{max-width:100%}
+/* Accordion */
+.accordion{margin-bottom:20px}
+.accordion-group{margin-bottom:5px}
+.accordion-heading{border-bottom:0;position:relative}
+.accordion-heading .accordion-toggle{background:#ededea;color:#368ccc;font-size:19px;font-family:'Yanone Kaffeesatz';text-decoration:none;display:block;padding:12px 20px;cursor:pointer}
+.accordion-inner{padding:9px 15px}
+.marker{width:26px;height:26px;background:url(../img/36.png) no-repeat;position:absolute;right:13px;top:11px}
+.accordion-heading .accordion-toggle.target{background:#368ccc;color:#fff}
+.target .marker{background:url(../img/37.png) no-repeat}	  
+/* Service Option */
+.link-block{color:#6d6e71;overflow:hidden;text-align:center;padding:16px 18px;margin-bottom:23px;display:block;text-decoration:none;border:1px solid #e0e0e0}
+.link-block:hover{background:url(../img/26.png) repeat-x bottom #3e3e3e;color:#bebfc0;margin-bottom:24px;border-bottom:0px}
+.move-item{position:relative}
+.move-bg-icon{width:62px;height:62px;display:inline-block;background-repeat:no-repeat;background-position:center;background-color:#368ccc;overflow:hidden;-webkit-border-radius: 100px;-moz-border-radius: 100px;border-radius: 100px;}
+.link-block:hover .move-bg-icon{background-color:#c5bcbc}
+	.icon-1{background-image:url(../img/in.png)}
+	.icon-2{background-image:url(../img/in.png)}  
+	.icon-3{background-image:url(../img/in.png)}     
+	.icon-4{background-image:url(../img/in.png)}	   
+/* Meet Our Doctors 1 */	
+.link-img{position:relative;display:block;max-width:100%;overflow:hidden;display:block;text-decoration:none;margin-bottom:6px}
+.link-img:hover{margin:0;padding-bottom:6px;background:url(../img/26.png) repeat-x bottom #f8f4f4}
+.img-border{border:1px solid #e7e7e7}
+.img-block{margin:6px 6px 5px;position:relative}
+.link-img .group{filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);position:absolute;top:0px;left:0px;text-align:center!important;vertical-align:middle;width:100%;height:100%;display:block;background:url(../img/40.png) no-repeat center}
+.link-img .group.text p{filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);text-align:left;font-style:normal;padding:0 10px;color:#f2f0f2}
+.link-img-bg{opacity:0;width:100%;position:absolute;top:0px;left:0px;height:100%;background:rgba(0,0,0,0.8)}
+.link-img h4{filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);color:#ff0000;width:100%;position:absolute;top:70%;text-align:center}
+.link-img p{color:#fff;font-style:italic;width:100%;position:absolute;top:80%;text-align:center}
+.link-img img{max-width:100%}	
+/* Table */
+.column{float:left;width:235px;margin-bottom:20px}
+.column h4{padding:10px 20px 15px;border-bottom:5px solid #368ccc;margin-bottom:2px}
+#content .col{padding-right:2px}
+#content .col li{margin-bottom:1px;padding:13px 20px;color:#58595b;font-size:14px;background:#ededea}
+#content .col li.row-odd{background:#f5f5f3}
+/* Price Table */
+.pricecolumn{float:left;width:235px;text-align:center}
+.pricecolumn h3{border-top:7px solid #fff;padding:15px 20px 20px;background:url(../img/41.png) repeat-x bottom #ededea;margin-bottom:2px}
+#content .pricecolumn .col li{background:#f5f5f3}  
+#content .col li.title-td{padding:0px}
+#content .col li.price-td{font-family:'Open Sans',sans-serif;line-height:1;background:#ededea}
+.dollar{position:absolute;top:23px;left:-15px;font-family:'Yanone Kaffeesatz',sans-serif;font-size:34px;color:#575757;}
+.number{position:relative;font-size:78px;color:#368ccc;}
+.cents{position:absolute;top:23px;right:25px;font-size:28px;color:#368ccc}
+.time{bottom:20px;right:-20px;font-size:34px;font-style:italic;color:#575757;}
+#content .col li.button-td{padding:0}
+.button-price{background:#ededea;border-bottom:7px solid #fff;margin-bottom:7px;font-family:'Yanone Kaffeesatz';font-size:23px;text-decoration:none;color:#368ccc;display:block;padding:10px 0 13px;width:100%}
+/* Make an Appointment */
+.contact{display:block;padding:2px 0 4px 36px;color:#58595b;font-family:'Yanone Kaffeesatz',sans-serif;font-size:16px}
+.phone{background:url(../img/24.png) no-repeat 7px center}
+.email{background:url(../img/25.png) no-repeat 5px center}
+/* Bootstrap */
+.collapse{position:relative;height:0;overflow:hidden;-webkit-transition:height .35s ease;-moz-transition:height .35s ease;-o-transition:height .35s ease;transition:height .35s ease}
+.collapse.in{height:auto}
+.fade {opacity: 0;-webkit-transition: opacity 0.15s linear;-moz-transition: opacity 0.15s linear;-o-transition: opacity 0.15s linear;transition: opacity 0.15s linear}
+.fade.in {opacity: 1}	
+/* Pages Under Construction & 404 */	 
+.under-wrapper{height:100%;position:relative}
+.under-sub-wrapper{min-height:100%}
+#header-under .social-icons{position:relative;margin-top:65px;right:10px;text-align:right}	
+.under-page,.under-404{padding:45px 0;text-align:center;background:#f2f0f0;border:1px solid #eceaec;-webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px;}
+.under-404{padding:25px 0;position:relative;top:5px;margin-bottom:40px}
+.under-headline{color:#6d6e71;font-size:26px;font-family:'Yanone Kaffeesatz';padding-bottom:45px;display:block;}
+.headline-404{font-size:215px;line-height:0.5;font-family:'Yanone Kaffeesatz'}
+.under-wrapper .date{margin-bottom:40px;background:#fff;font-size:127px;font-family:'Yanone Kaffeesatz';color:#7b7d7e;border:1px solid #e5e5e5;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;}
+.under-wrapper .date span{font-size:35px;color:#368ccc;display:block;padding-bottom:20px;border-bottom:4px solid #368ccc}
+.offset-under{margin-left:140px}
+#footer-under-padding{clear:both;width:100%;height:100px;float:left}
+#footer-under{background:url(../img/45.png) no-repeat center #368ccc;margin-top:-60px;height:40px;padding-top:20px;clear:both}
+/* Blog */
+.blog-line{background:#faf9f9;font-family:'Open Sans',sans-serif;font-size:12px;padding:10px 0;margin-bottom:20px}
+.blog-line a{text-decoration:none}
+.blog-line a:hover{text-decoration:underline}
+.blog-line .item{padding-left:20px;margin-left:15px;}
+.blog-line .date{background:url(../img/46.png) no-repeat center left;}
+.blog-line .author{background:url(../img/47.png) no-repeat center left;}
+.blog-line .category{background:url(../img/48.png) no-repeat center left;}
+.blog-line .commets{background:url(../img/49.png) no-repeat center left;}
+/* Comment */
+#content .commentlist{margin-top:-10px}
+#content .commentlist li{position:relative;color:#58595b;padding:20px 0 0 0;float:left;border-bottom:1px solid #ebeaea}
+.comments-container {width:100%;float:left;margin-bottom:20px}
+.the-comment{position:relative}
+.comments-container .avatar{position:absolute;top:2px;left:0px;margin-right:20px}
+.comments-container .comment-box{padding-left:80px}
+#content .commentlist .children li{padding:20px 0 0 80px;border:0;border-top:1px solid #ebeaea}
+.comment-author{padding-bottom:10px}
+.comment-author a{text-decoration:none}
+.comment-author a:hover{text-decoration:underline}
+@media (max-width: 979px){
+	/* header */
+	#header [class*=span]{float:none;display:block;width:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+	#header,#header .header-bg,#header.main,#header.main .header-bg{background:none;height:auto;margin-bottom:10px}
+	#header .container{background:url(../img/05.jpg) no-repeat center top}
+	#header .social-icons{top:-43px;margin-top:20px;right:0;text-align:center;float:none}
+	.search-form{top:-25px;right:50%;margin-right:-96px;border:1px solid #ededed}
+	.container-fluid{padding:0 20px}
+	/* up */	  
+	.back-top{position:relative;bottom:29px;left:50%;right:0px;margin:0;margin-left:-50px}
+	#headline-page{position:relative;top:0}
+	.ls-inner{height:260px!important;overflow:hidden}
+	.ls-layer{height:100%!important}
+	.main-slider{height:310px;background:none}
+	.ls-bottom-slidebuttons{width:100%;text-align:center;bottom:-50px}
+	.ls-s1 img{height:120%;width:auto;}
+	.ls-s2{top:40px!important;left:15px!important;width:400px;height:183px}
+	.ls-s3{top:170px!important;left:155px!important}
+	.ls-s4{top:100px!important;left:90px!important;width:290px}
+	.ls-s5{top:60px!important;left:70px!important;font-size:28px;}
+}	
+@media (min-width: 768px) and (max-width: 979px){
+	#header .span12{margin-left:20px;width:724px}
+	.link-img h4{margin-top:100px}
+}	
+@media (max-width: 767px){
+	#header .span12{margin-left:0px}
+	#menu{padding:0 20px;background:none;display:block}
+	#menu li{width:100%;margin-bottom:1px}
+	#menu li a{background:#ff0000;text-align:center}
+	.row [class*=span],.row-fluid [class*=span]{clear:both}  
+	.blockquote-left,.blockquote-right{width:100%}
+	.award{float:left;margin-bottom:10px}	
+	.award:hover{margin-bottom:6px;padding-bottom:4px}	
+	.under-page,.under-404{padding:0 20px}
+	.main-slider{height:240px}
+	.ls-inner{height:200px!important;overflow:hidden}
+	.ls-s2{top:20px!important;left:-45px!important;width:310px;height:142px}
+	.ls-s3{top:100px!important;left:20px!important}
+	.ls-s5{top:50px!important;left:20px!important;font-size:28px;}
+	.ls-s6{height:120%}
+}
