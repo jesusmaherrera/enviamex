@@ -5,7 +5,7 @@ from django.template import RequestContext
 from models import *
 from forms import *
 import datetime, time
-
+from django.contrib.auth.models import User
 #Paginacion
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
@@ -21,84 +21,148 @@ def index(request):
 
 @login_required(login_url='/login/')
 def envios_View(request, template_name='envios/envios.html'):
-	envios = Envio.objects.all
+	if request.user.is_staff:
+		envios = Envio.objects.all
+	else:
+		envios = Envio.objects.filter(usuario=request.user) 
+
 	c = {'envios':envios}
 	return render_to_response(template_name, c, context_instance=RequestContext(request))
 
 @login_required(login_url='/login/')
+def envio_deleteView(request, id = None):
+	if request.user.is_staff:
+		envio = get_object_or_404(Envio, pk=id)
+		envio.delete()
+
+	return HttpResponseRedirect('/envios/')
+
+@login_required(login_url='/login/')
 def clientes_View(request, template_name='clientes/clientes.html'):
-	clientes = Cliente.objects.all
+	if request.user.is_staff:
+		clientes = PerfilUsario.objects.all
+	else:
+		return HttpResponseRedirect('/envios/')
+
 	c = {'clientes':clientes}
 	return render_to_response(template_name, c, context_instance=RequestContext(request))
 
 @login_required(login_url='/login/')
-def cliente_manageView(request, id = None, template_name='clientes/cliente.html'):
+def usuario_manageView(request, id = None, template_name='clientes/usuario.html'):
+	nuevousuario = False
 	if id:
-		cliente = get_object_or_404(Cliente, pk=id)
+		perfil_usario = get_object_or_404(PerfilUsario, pk=id)
+		usuario = perfil_usario.usuario
 	else:
-		cliente = Cliente()
+		nuevousuario = True
+		perfil_usario = PerfilUsario()
+		usuario = User()
 
 	msg = '' 
 
 	if request.method == 'POST':
-		Cliente_form = ClienteManageForm(request.POST, request.FILES, instance=cliente)
+		if nuevousuario:
+			usuario_form = RegisterForm(request.POST, request.FILES, instance=usuario)
+		else:			
+			usuario_form = UsarioChangeForm(request.POST, request.FILES, instance=usuario)
 
-		if Cliente_form.is_valid():
-			Cliente_form.save()
+		perfil_usarioForm = PerfilUsarioManageForm(request.POST, request.FILES, instance=perfil_usario)
+		
+		if perfil_usarioForm.is_valid() and usuario_form.is_valid():
+			perfil = perfil_usarioForm.save(commit=False)
+			if perfil.tipo == 'A':
+				usuario.is_staff = True
+			else:
+				usuario.is_staff = False
+
+			usuario = usuario_form.save()
+			perfil.usuario = usuario
+			perfil_usarioForm.save()
+
 			return HttpResponseRedirect('/clientes/')
 	else:
-		Cliente_form = ClienteManageForm(instance=cliente)
-		
-	c = {'cliente_form': Cliente_form, }
+		perfil_usarioForm = PerfilUsarioManageForm(instance=perfil_usario)
+		if nuevousuario:
+			usuario_form = RegisterForm(instance= usuario)
+		else:
+			usuario_form = UsarioChangeForm(instance=usuario)
+
+	c = {'perfil_usarioForm': perfil_usarioForm, 'usuario_form': usuario_form, }
 
 	return render_to_response(template_name, c, context_instance=RequestContext(request))
 
-def clientenormal_manageView(request, id = None, template_name='clientes/clienteNormal.html'):
+def cliente_manageView(request, id = None, template_name='clientes/cliente.html'):
+	nuevousuario = False
 	if id:
-		cliente = get_object_or_404(Cliente, pk=id)
+		perfil_usario = get_object_or_404(PerfilUsario, pk=id)
+		usuario = perfil_usario.usuario
 	else:
-		cliente = Cliente()
+		nuevousuario = True
+		perfil_usario = PerfilUsario()
 		usuario = User()
+
 	msg = '' 
 
 	if request.method == 'POST':
-		Cliente_form = ClienteNormalManageForm(request.POST, request.FILES, instance=cliente)
+		if nuevousuario:
+			usuario_form = RegisterForm(request.POST, request.FILES, instance=usuario)
+		else:			
+			usuario_form = UsarioChangeForm(request.POST, request.FILES, instance=usuario)
 
-		if Cliente_form.is_valid():
-			Cliente_form.save()
+		perfil_usarioForm = PerfilClienteManageForm(request.POST, request.FILES, instance=perfil_usario)
+		
+		if perfil_usarioForm.is_valid() and usuario_form.is_valid():
+			perfil = perfil_usarioForm.save(commit=False)
+			usuario.is_staff = False
+			usuario = usuario_form.save()
+
+			perfil.usuario = usuario
+			perfil_usarioForm.save()
+
 			return HttpResponseRedirect('/clientes/')
 	else:
-		usuario_form = RegisterForm(instance= usuario)
-		Cliente_form = ClienteNormalManageForm(instance=cliente)
-		
-	c = {'cliente_form': Cliente_form, 'usuario_form': usuario_form, }
+		perfil_usarioForm = PerfilClienteManageForm(instance=perfil_usario)
+		if nuevousuario:
+			usuario_form = RegisterForm(instance= usuario)
+		else:
+			usuario_form = UsarioChangeForm(instance=usuario)
+
+	c = {'perfil_usarioForm': perfil_usarioForm, 'usuario_form': usuario_form, }
 
 	return render_to_response(template_name, c, context_instance=RequestContext(request))
 
 @login_required(login_url='/login/')
-def cliente_deleteView(request, id = None):
-	cliente = get_object_or_404(Cliente, pk=id)
-	cliente.delete()
-
+def usuario_deleteView(request, id = None):
+	if request.user.is_staff:
+		
+		perfil_usario = get_object_or_404(PerfilUsario, pk=id)
+		usuario = get_object_or_404(User, pk=perfil_usario.usuario.id)
+		if not usuario.username == 'admin':
+			usuario.delete()
+			perfil_usario.delete()
+			
 	return HttpResponseRedirect('/clientes/')
 
 @login_required(login_url='/login/')
 def envio_manageView(request, id = None, template_name='envios/envio.html'):
-	if id:
-		envio = get_object_or_404(Envio, pk=id)
+	if request.user.is_staff:
+		if id:
+			envio = get_object_or_404(Envio, pk=id)
+		else:
+			envio = Envio()
+
+		msg = '' 
+
+		if request.method == 'POST':
+			envio_form = EnvioManageForm(request.POST, request.FILES, instance=envio)
+
+			if envio_form.is_valid():
+				envio_form.save()
+				return HttpResponseRedirect('/envios/')
+		else:
+			envio_form = EnvioManageForm(instance=envio)
 	else:
-		envio = Envio()
-
-	msg = '' 
-
-	if request.method == 'POST':
-		envio_form = EnvioManageForm(request.POST, request.FILES, instance=envio)
-
-		if envio_form.is_valid():
-			envio_form.save()
-			return HttpResponseRedirect('/envios/')
-	else:
-		envio_form = EnvioManageForm(instance=envio)
+		return HttpResponseRedirect('/envios/')
 		
 	c = {'envio_form': envio_form, }
 

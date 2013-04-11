@@ -3,10 +3,10 @@ from django.contrib.auth.models import User
 from datetime import datetime
 from cities_light.models import City
 
-class Cliente(models.Model):
+class PerfilUsario(models.Model):
 	nombre = models.CharField(max_length=40)
-	edad = models.CharField(default='', max_length=3)
-	rfc = models.CharField(default='', null=True, blank=True, max_length=13)
+	usuario = models.OneToOneField(User, blank=True, null=True)
+	telefono = models.CharField(default='', max_length=10, blank=True, null=True)
 	#DIRECCION
 	ciudad = models.ForeignKey(City, on_delete=models.SET_NULL, null=True, blank=True)
 	codigo_postal = models.CharField(max_length=5)
@@ -17,12 +17,12 @@ class Cliente(models.Model):
 	dir_colonia = models.CharField(max_length=100, blank=True, null=True)
 	dir_poblacion = models.CharField(max_length=100, blank=True, null=True)
 	dir_referencia = models.CharField(max_length=100, blank=True, null=True)
-	usuario = models.OneToOneField(User, blank=True, null=True)
-	telefono = models.CharField(default='', max_length=10, blank=True, null=True)
+	
 	TIPOS = (
 		('A', 'Administrador'),
 		('C', 'Cliente'),
 		)
+
 	tipo = models.CharField(max_length=10, choices=TIPOS, default='C')
 
 	ocupacion = models.CharField(max_length=30, blank=True, null=True)
@@ -42,8 +42,17 @@ class Envio(models.Model):
 		('U', 'URGENTE'),
 		('MU', 'MUY URGENTE'),
 		)
-	tipo = models.CharField(max_length=10, choices=TIPOS, default='N')
-	cliente = models.ForeignKey(Cliente, on_delete=models.SET_NULL, null=True, blank=True)
+	
+	ESTADOS = (
+		('E', 'ENTREGADO'),
+		('PE', 'POR ENTREGAR'),
+		('I', 'INDEFINIDO'),
+		)
+
+	tipo = models.CharField(max_length=10, choices=ESTADOS, default='N')
+	estado = models.CharField(max_length=10, choices=TIPOS, default='PE')
+
+	usuario = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
 
 	def __unicode__(self):
 		return self.descripcion

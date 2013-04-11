@@ -4,10 +4,11 @@
 {% block content %}
 <div class="container">
 	<div id="headline-page">
-		<h1>Lista de clientes <a href="/cliente/" class="btn">Nuevo cliente</a></h1> 
+		<h1>Lista de clientes <a href="/usuario/" class="btn">Nuevo cliente</a></h1> 
 	</div>
-
+	
 	<div class="row">
+	
 		<table class="table tableCell table-hover">
 			<tr>
 				<th>Id</th>
@@ -30,12 +31,12 @@
 				</div>
 				<div class="modal-footer">
 					<button class="btn" data-dismiss="modal">Cerrar</button>
-					<a href="/cliente/delete/{{ cliente.id }}/" class="btn btn-primary">Estoy Seguro</a>
+					<a href="/usuario/delete/{{ cliente.id }}/" class="btn btn-primary">Estoy Seguro</a>
 				</div>
 			</div>
 			<tr>
 				<td>
-					<a href="/cliente/{{ cliente.id }}/">{{ cliente.id }}</a>
+					<a href="/usuario/{{ cliente.id }}/">{{ cliente.id }}</a>
 				</td>
 				<td>{{ cliente.nombre }}</td>
 				<td>{{ cliente.ciudad }}, {{ cliente.colonia }}</td>

@@ -58,7 +58,7 @@
           <!-- Contact Details -->
           <div class="contact-details visible-desktop">
             <ul>
-              <li><a href="/clienteN/" >Registrarse</a> Contáctenos: <a href="#" class="tel">+526255811892</a></li>
+              <li> {% if user.is_anonymous %}<a href="/cliente/" >Registrarse</a>{% endif %} Contáctenos: <a href="#" class="tel">+526255811892</a></li>
                             <li>Av. Hidalgo #2565, Centro, Cd. Cuauhtémoc, Chih. Mex. <a href="mailto:info@enviamexpaisano.com">info@enviamexpaisano.com</a></li>
                         </ul>
           </div>      
@@ -98,7 +98,10 @@
             </li>
              
             <li><a href="contacto.html">Contactenos</a></li> 
+            {% if user.is_staff %}
             <li><a href="/clientes/">Clientes</a></li>
+            {% endif%}
+            
           </ul>
         </div>
       </div>

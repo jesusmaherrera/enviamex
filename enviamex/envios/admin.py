@@ -13,7 +13,7 @@ from django.contrib import admin
 # class UserAdmin(UserAdmin):
 #     inlines = (EmployeeInline, )
 
-admin.site.register(Cliente)
+admin.site.register(PerfilUsario)
 admin.site.register(Envio)
 
 # # Re-register UserAdmin

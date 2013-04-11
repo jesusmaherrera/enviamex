@@ -12,18 +12,19 @@ urlpatterns = patterns('',
 
     url(r'^$', 'envios.views.index', name='index'),
     url(r'^envios/$', 'envios.views.envios_View', name='envios'),
-    url(r'^clientes/$', 'envios.views.clientes_View', name='clientes'),
-    (r'^cliente/$', 'envios.views.cliente_manageView'),
-    (r'^cliente/(?P<id>\d+)', 'envios.views.cliente_manageView'),
-
-    (r'^clienteN/$', 'envios.views.clientenormal_manageView'),
-    (r'^clienteN/(?P<id>\d+)', 'envios.views.clientenormal_manageView'),
-    
-
-    (r'^cliente/delete/(?P<id>\d+)/', 'envios.views.cliente_deleteView'),
-
     (r'^envio/$', 'envios.views.envio_manageView'),
     (r'^envio/(?P<id>\d+)', 'envios.views.envio_manageView'),
+    (r'^envio/delete/(?P<id>\d+)/', 'envios.views.envio_deleteView'),
+
+    url(r'^clientes/$', 'envios.views.clientes_View', name='clientes'),
+    (r'^usuario/$', 'envios.views.usuario_manageView'),
+    (r'^usuario/(?P<id>\d+)', 'envios.views.usuario_manageView'),
+    (r'^usuario/delete/(?P<id>\d+)/', 'envios.views.usuario_deleteView'),
+
+    (r'^cliente/$', 'envios.views.cliente_manageView'),
+    (r'^cliente/(?P<id>\d+)', 'envios.views.cliente_manageView'),
+    
+    
     # url(r'^enviamex/', include('enviamex.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

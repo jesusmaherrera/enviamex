@@ -4,7 +4,7 @@
 {% block content %}
 <div class="container">
 	<div id="headline-page">
-		<h1>Lista de envios <a href="/envio/" class="btn">Nuevo envio</a></h1>
+		<h1>Lista de envios  {% if user.is_staff %}  <a href="/envio/" class="btn">Nuevo envio</a> {% endif %}</h1>
 	</div>
 	<div class="row">
 		<table class="table tableCell table-hover">
@@ -15,8 +15,8 @@
 				<th>Fecha llegada</th>
 				<th>Peso</th>
 				<th>Tamaño</th>
+				<th>Estado</th>
 				<th>Tipo</th>
-				<th>Cliente</th>
 			</tr>
 			{% for envio in envios %}
 			<div id="myModal{{ envio.id}}" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -26,7 +26,7 @@
 				</div>
 				<div class="modal-body">
 					<h4>Al eliminar este envio</h4>
-					<p style="color:red;">Se eliminaran todos los datos que este envio tenga asociado</p>
+					<p style="color:red;">Se eliminaran todos los datos que de este envio</p>
 				</div>
 				<div class="modal-footer">
 					<button class="btn" data-dismiss="modal">Cerrar</button>
@@ -35,17 +35,24 @@
 			</div>
 			<tr>
 				<td>
+					{% if user.is_staff %}
 					<a href="/envio/{{ envio.id }}/">{{ envio.id }}</a>
+					{% else %}
+					{{ envio.id }}
+					{% endif %}
 				</td>
 				<td>{{ envio.descripcion }}</td>
 				<td>{{ envio.fecha_salida }}</td>
 				<td>{{ envio.fecha_llegada }}</td>
 				<td>{{ envio.peso }}</td>
 				<td>{{ envio.tamano }}</td>
+				<td>{{ envio.estado }}</td>
 				<td>{{ envio.tipo }}</td>
 				<td>{{ envio.cliente }}</td>
 				<td style="text-align:center;">
+					 {% if user.is_staff %}
 					<a href='#myModal{{ envio.id}}' data-toggle="modal" class="btn btn-mini btn-danger"><i class="icon-trash"></i></a>
+					{% endif %}
 				</td>
 			</tr>
 			{% endfor %}

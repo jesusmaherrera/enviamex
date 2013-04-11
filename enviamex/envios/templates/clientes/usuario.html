@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% block title %}Cliente{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div id="headline-page">
+		<h1>Usuario</h1>
+	</div>
+
+	<div class="row">
+		<form method="post" class="" action="" width="300px"  enctype='multipart/form-data'>
+      <br>
+      {% csrf_token %}
+      {% if msg %}
+      <div class="alert alert-block alert-error fade in">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <h4 class="alert-heading"></h4>
+        <p>{{ msg }}</p>
+      </div>
+      {% endif %}
+      <fieldset>
+        <legend><h2>Datos para el sistema</h2></legend>
+        <hr>
+        {{ usuario_form.errors }}
+        {{ usuario_form }}
+      </fieldset>
+      <fieldset>
+        <legend><h2>Datos personales</h2></legend>
+        {{ perfil_usarioForm.errors }}
+        <hr>
+        <div class="span4">
+          <label>Nombre Completo</label>
+          {{ perfil_usarioForm.nombre }}
+        </div>
+        <div class="span4">
+          <label>Telefono</label>
+          <div class="input-prepend input-append">
+            <span class="add-on">#</span>
+            {{ perfil_usarioForm.telefono }}
+          </div>
+        </div>
+        <div class="span4" >
+          <label>Tipo</label>
+          {{ perfil_usarioForm.tipo }}
+        </div>
+        <div class="span4">
+          <label>Ocupacion</label>
+          {{ perfil_usarioForm.ocupacion }}
+        </div>
+        <legend><h2>Direccion</h2></legend>
+        <hr>
+        <div class="span4" style='clear:both;'>
+          <label>Codigo Postal</label>
+          <div class="input-prepend input-append">
+            <span class="add-on">#</span>
+            {{ perfil_usarioForm.codigo_postal }}
+          </div>
+        </div>
+        <div class="span4" >
+          <label>Ciudad</label>
+          {{ perfil_usarioForm.ciudad }}
+        </div>
+        <div class="span4">
+          <label>Colonia</label>
+          {{ perfil_usarioForm.dir_colonia }}
+        </div>
+        <div class="span4">
+          <label>Poblacion</label>
+          {{ perfil_usarioForm.dir_poblacion }}
+        </div>
+        <div class="span4" >
+          <label>Referencia</label>
+          {{ perfil_usarioForm.dir_referencia }}
+        </div>
+        <div class="span4" style='clear:both;'>
+          <label>Calle</label>
+          {{ perfil_usarioForm.dir_calle }}
+        </div>
+        <div class="span4" >
+          <label>No Exterior</label>
+          <div class="input-prepend input-append">
+            <span class="add-on">#</span>
+            {{ perfil_usarioForm.dir_no_exterior}}
+          </div>
+        </div>
+        <div class="span4" >
+          <label>No Interior</label>
+          <div class="input-prepend input-append">
+            <span class="add-on">#</span>
+            {{ perfil_usarioForm.dir_no_interior }}
+          </div>
+        </div>
+      </fieldset>
+      
+      <div class="form-actions mainmenu" style='clear:both;'>
+       <input type="submit" class="btn btn-primary" value="Guardar y Salir" />
+     </div>
+   </form>
+ </div>
+</div>
+{% endblock %}

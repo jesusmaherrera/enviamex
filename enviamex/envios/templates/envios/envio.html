@@ -49,6 +49,10 @@
     </div>
   </div>
   <div class="span3">
+    <label>Estado</label>
+    {{ envio_form.estado }}
+  </div>
+  <div class="span3">
     <label>Tipo</label>
     {{ envio_form.tipo }}
   </div>
@@ -57,7 +61,7 @@
   </div>
   <div class="span3" style='clear:both;'>
     <label>Cliente</label>
-    {{ envio_form.cliente }}
+    {{ envio_form.usuario }}
   </div>
   <div class="form-actions mainmenu" style='clear:both;'>
 	<input type="submit" class="btn btn-primary" value="Guardar y Salir" />

@@ -8,18 +8,26 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, AuthenticationForm, AdminPasswordChangeForm
 from django.forms.models import BaseInlineFormSet, inlineformset_factory
 
-class ClienteManageForm(forms.ModelForm):
-	class Meta:
-		model = Cliente
-
-class ClienteNormalManageForm(forms.ModelForm):
-	class Meta:
-		model = Cliente
-		exclude = ('tipo',)
+class PerfilUsarioManageForm(forms.ModelForm):
+    #widgets = autocomplete_light.get_widgets_dict(PerfilUsario)
+    class Meta:
+        model = PerfilUsario
+        exclude = ('usuario',)
+        
+class PerfilClienteManageForm(forms.ModelForm):
+    #widgets = autocomplete_light.get_widgets_dict(PerfilUsario)
+    class Meta:
+        model = PerfilUsario
+        exclude = ('usuario','tipo',)
 
 class EnvioManageForm(forms.ModelForm):
 	class Meta:
 		model = Envio
+
+class RegisterForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ("username", )
 
 class UsarioChangeForm(forms.ModelForm):
     username = forms.RegexField(label="Nombre de Usuario", max_length=30, regex=r'^[\w.@+-]+$',
@@ -30,7 +38,7 @@ class UsarioChangeForm(forms.ModelForm):
 
     class Meta(UserChangeForm):
         model = User
-        exclude = ('password', 'last_login', 'date_joined','last_name','first_name','email','is_superuser','groups','user_permissions','is_active',)
+        exclude = ('password', 'last_login', 'date_joined','last_name','first_name','email','is_superuser','groups','user_permissions','is_active',"is_staff",)
 
     def clean_new_password2(self):
         password1 = self.cleaned_data.get('new_password1')
@@ -53,7 +61,6 @@ class UsarioChangeForm(forms.ModelForm):
         		
         	if user.username == 'admin':
         		user.is_staff = True
-
 
         	user.save()
         return user
