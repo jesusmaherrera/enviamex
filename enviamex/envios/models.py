@@ -33,24 +33,16 @@ class PerfilUsario(models.Model):
 class Envio(models.Model):
 	descripcion 	= models.CharField(max_length=200)
 	fecha_salida 	= models.DateTimeField(default=datetime.now())
-	fecha_llegada 	= models.DateTimeField(blank=True)
+	fecha_llegada 	= models.DateTimeField(blank=True, null=True)
 	peso			= models.CharField(max_length=100, blank=True, null=True)
 	tamano			= models.CharField(max_length=100, blank=True, null=True)
-	
-	TIPOS = (
-		('N', 'NORMAL'),
-		('U', 'URGENTE'),
-		('MU', 'MUY URGENTE'),
-		)
-	
+
 	ESTADOS = (
 		('E', 'ENTREGADO'),
 		('PE', 'POR ENTREGAR'),
 		('I', 'INDEFINIDO'),
 		)
-
-	tipo = models.CharField(max_length=10, choices=ESTADOS, default='N')
-	estado = models.CharField(max_length=10, choices=TIPOS, default='PE')
+	estado = models.CharField(max_length=10, choices=ESTADOS, default='PE')
 
 	usuario = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
 

@@ -61,7 +61,7 @@ ins,a:hover{text-decoration:none}
 		.search-text-box{font-family:'Open Sans',sans-serif;line-height:2;color:#808285;left:0px;padding:0 10px;width:129px;height:27px;background:url(images/03.png) repeat-x}
 		.search-text-submit{cursor:pointer;right:0px;width:43px;height:27px;background:url(images/04.png) no-repeat}
 	/* Menu */
-	#menu {background:#ff0000;height:49px;position:relative;z-index:2;}   
+	#menu {background:#ff0000;height:49px;position:relative;z-index:1;}   
 	#menu li{float:left;list-style:none;position:relative}
 	#menu li a{font-family:'Open Sans',sans-serif;text-transform:uppercase;text-decoration:none;color:#fff;padding:15px 10px 16px;display:block}
 	#menu li a:hover{background:#da0606}
@@ -431,4 +431,23 @@ textarea{width:100%}
 	.ls-s3{top:100px!important;left:20px!important}
 	.ls-s5{top:50px!important;left:20px!important;font-size:28px;}
 	.ls-s6{height:120%}
+}
+
+.z_index10
+{
+	z-index: 20;
+}
+
+.mainmenu
+{
+	text-align: center;
+}
+
+#content li {
+	padding: 0;
+}
+.btn_log
+{
+	margin-bottom: 15px;
+	text-decoration: none;	
 }

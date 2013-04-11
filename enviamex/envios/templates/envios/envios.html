@@ -4,7 +4,7 @@
 {% block content %}
 <div class="container">
 	<div id="headline-page">
-		<h1>Lista de envios  {% if user.is_staff %}  <a href="/envio/" class="btn">Nuevo envio</a> {% endif %}</h1>
+		<h1>Lista de envios  {% if user.is_staff %}  <a href="/envio/" class="btn btn_log">Nuevo envio</a> {% endif %}</h1>
 	</div>
 	<div class="row">
 		<table class="table tableCell table-hover">
@@ -16,7 +16,7 @@
 				<th>Peso</th>
 				<th>Tamaño</th>
 				<th>Estado</th>
-				<th>Tipo</th>
+				<th>Cliente</th>
 			</tr>
 			{% for envio in envios %}
 			<div id="myModal{{ envio.id}}" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -47,8 +47,7 @@
 				<td>{{ envio.peso }}</td>
 				<td>{{ envio.tamano }}</td>
 				<td>{{ envio.estado }}</td>
-				<td>{{ envio.tipo }}</td>
-				<td>{{ envio.cliente }}</td>
+				<td>{{ envio.usuario }}</td>
 				<td style="text-align:center;">
 					 {% if user.is_staff %}
 					<a href='#myModal{{ envio.id}}' data-toggle="modal" class="btn btn-mini btn-danger"><i class="icon-trash"></i></a>

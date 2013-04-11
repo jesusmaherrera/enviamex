@@ -7,6 +7,7 @@ from forms import *
 import datetime, time
 from django.contrib.auth.models import User
 #Paginacion
+from cities_light.models import City
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # user autentication
@@ -199,3 +200,67 @@ def ingresar(request):
 def logoutUser(request):
     logout(request)
     return HttpResponseRedirect('/')
+
+
+##########################################
+## 										##
+##               CIUDAD  			    ##
+##										##
+##########################################
+
+@login_required(login_url='/login/')
+def ciudad_manageView(request, id = None, template_name='ciudades/ciudad.html'):
+	if id:
+		ciudad = get_object_or_404(City, pk=id)
+	else:
+		ciudad = City()
+
+	if request.method == 'POST':
+		Ciudad_form = CiudadManageForm(request.POST, request.FILES, instance=ciudad)
+
+		if Ciudad_form.is_valid():
+			if request.user.has_perm('creditos.change_city'):
+				Ciudad_form.save()
+			
+			return HttpResponseRedirect('/ciudades/')
+	else:
+		if request.user.has_perm('creditos.add_city'):
+			Ciudad_form = CiudadManageForm(instance=ciudad)
+		else:
+			return HttpResponseRedirect('/ciudades/')
+
+	c = {'ciudad_form': Ciudad_form, }
+
+	return render_to_response(template_name, c, context_instance=RequestContext(request))
+
+@login_required(login_url='/login/')
+def ciudades_View(request, template_name='ciudades/ciudades.html'):
+	try: 
+		filtro = request.GET['filtro']
+	except:
+		filtro = ''
+	ciudades_list = City.objects.filter(name__icontains=filtro).filter(country__name='Mexico')
+
+	paginator = Paginator(ciudades_list, 20) # Muestra 5 inventarios por pagina
+	page = request.GET.get('page')
+
+	#####PARA PAGINACION##############
+	try:
+		ciudades = paginator.page(page)
+	except PageNotAnInteger:
+	    # If page is not an integer, deliver first page.
+	    ciudades = paginator.page(1)
+	except EmptyPage:
+	    # If page is out of range (e.g. 9999), deliver last page of results.
+	    ciudades = paginator.page(paginator.num_pages)
+
+	c = {'ciudades':ciudades,'filtro':filtro,'msg':ciudades.count}
+  	return render_to_response(template_name, c, context_instance=RequestContext(request))
+
+@login_required(login_url='/login/')
+def ciudad_deleteView(request, id = None, template_name='ciudades/ciudades.html'):
+	if request.user.has_perm('creditos.delete_ciudad'):
+		ciudad = get_object_or_404(City, pk=id)
+		ciudad.delete()
+
+	return HttpResponseRedirect('/ciudades/')

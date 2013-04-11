@@ -1,6 +1,8 @@
 from django.conf.urls import patterns, include, url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
+import autocomplete_light
+autocomplete_light.autodiscover()
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
@@ -23,8 +25,14 @@ urlpatterns = patterns('',
 
     (r'^cliente/$', 'envios.views.cliente_manageView'),
     (r'^cliente/(?P<id>\d+)', 'envios.views.cliente_manageView'),
+    url(r'autocomplete/', include('autocomplete_light.urls')),
     
-    
+     #Ciudades
+    (r'^ciudades/$', 'envios.views.ciudades_View'),
+    (r'^ciudad/$', 'envios.views.ciudad_manageView'),
+    (r'^ciudad/(?P<id>\d+)/', 'envios.views.ciudad_manageView'),
+    (r'^ciudad/delete/(?P<id>\d+)/', 'envios.views.ciudad_deleteView'),
+
     # url(r'^enviamex/', include('enviamex.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

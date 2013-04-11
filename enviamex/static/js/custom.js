@@ -185,12 +185,12 @@ $(document).ready(function(){
 	});
 	
 	// timer
-	$(function () {
-		var austDay = new Date();
-		austDay = new Date(austDay.getFullYear(), austDay.getMonth() + 1, 26);// (2015,01,01)
-		$('#countdown').countdown({until: austDay});
-		$('#year').text(austDay.getFullYear());
-	});
+	// $(function () {
+	// 	var austDay = new Date();
+	// 	austDay = new Date(austDay.getFullYear(), austDay.getMonth() + 1, 26);// (2015,01,01)
+	// 	$('#countdown').countdown({until: austDay});
+	// 	$('#year').text(austDay.getFullYear());
+	// });
 	
 	// contact form
 	$("#ajax-contact-form").submit(function() {

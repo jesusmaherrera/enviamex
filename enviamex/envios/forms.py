@@ -2,21 +2,22 @@
 from django import forms
 
 import autocomplete_light
-
+from cities_light.models import City
 from models import *
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, AuthenticationForm, AdminPasswordChangeForm
 from django.forms.models import BaseInlineFormSet, inlineformset_factory
 
 class PerfilUsarioManageForm(forms.ModelForm):
-    #widgets = autocomplete_light.get_widgets_dict(PerfilUsario)
     class Meta:
+        widgets = autocomplete_light.get_widgets_dict(PerfilUsario)
         model = PerfilUsario
         exclude = ('usuario',)
         
 class PerfilClienteManageForm(forms.ModelForm):
-    #widgets = autocomplete_light.get_widgets_dict(PerfilUsario)
+    
     class Meta:
+        widgets = autocomplete_light.get_widgets_dict(PerfilUsario)
         model = PerfilUsario
         exclude = ('usuario','tipo',)
 
@@ -69,3 +70,14 @@ class RegisterForm(UserCreationForm):
     class Meta:
         model = User
         fields = ("username", )
+
+class CiudadManageForm(forms.ModelForm):
+    class Meta:
+        model = City
+        exclude = (
+            'latitude',
+            'longitude',
+            'alternate_names',
+            'geoname_id',
+            'name_ascii',
+            )

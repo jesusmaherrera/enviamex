@@ -24,14 +24,14 @@
   {% endblock %}
   <script type="text/javascript">
 
-    $(document).ready(function(){
-      $('#layerslider').layerSlider({
-        autoStart : true,
-        hoverPrevNext : false,
-        animateFirstLayer : false,
-        thumbnailNavigation : false
-      });
-    });   
+    // $(document).ready(function(){
+    //   $('#layerslider').layerSlider({
+    //     autoStart : true,
+    //     hoverPrevNext : false,
+    //     animateFirstLayer : false,
+    //     thumbnailNavigation : false
+    //   });
+    // });   
   </script>
 
 </head>
@@ -48,9 +48,9 @@
           <!-- Social Icons -->
           <ul class="social-icons">
             {% if not user.is_anonymous %}
-            {{ user.username }} <a class="btn btn-small btn-danger" href="/logout/">  Cerrar Sesión</a>
+            {{ user.username }} <a class="btn btn-mini btn-danger btn_log" href="/logout/">  Salir</a>
             {% else %}
-            <a class="btn btn-small btn-success" href="/login/">Iniciar Sesión</a>
+            <a  class="btn btn-mini btn_log" href="/login/">Iniciar Sesión</a>
             {% endif %}
             <li class="facebook"><a href="https://www.facebook.com/EnviamexPaisanoInc">Facebook</a></li>
             <li class="twitter"><a href="https://twitter.com/EnviamexPaisano">Twitter</a></li>
@@ -100,6 +100,12 @@
             <li><a href="contacto.html">Contactenos</a></li> 
             {% if user.is_staff %}
             <li><a href="/clientes/">Clientes</a></li>
+            <li>
+              <a href="#">Mas</a>
+              <ul> 
+                <li><a href="/ciudades/">Ciudades</a></li>
+              </ul>
+            </li>
             {% endif%}
             
           </ul>

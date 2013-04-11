@@ -125,7 +125,7 @@ INSTALLED_APPS = (
     'envios',
     'autocomplete_light',
     'cities_light',
-    'south',
+    #'south',
     # Uncomment the next line to enable the admin:
      'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

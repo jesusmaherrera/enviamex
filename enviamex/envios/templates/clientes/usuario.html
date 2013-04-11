@@ -58,7 +58,7 @@
         </div>
         <div class="span4" >
           <label>Ciudad</label>
-          {{ perfil_usarioForm.ciudad }}
+          {{ perfil_usarioForm.ciudad }}<a href="/ciudad/"><i class="icon-plus-sign"></i></a>
         </div>
         <div class="span4">
           <label>Colonia</label>
@@ -98,4 +98,5 @@
    </form>
  </div>
 </div>
+{% include 'autocomplete_light/static.html' %}
 {% endblock %}

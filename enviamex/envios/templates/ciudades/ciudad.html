@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Ciudades{% endblock %}
+{% block breadcrumb %}{{ block.super }} <a href="/clientes/">Ciudades</a> > Ciudad{% endblock %}
+{% block content %}
+<form method="post" class="form-horizontal" action="" width="300px"  enctype='multipart/form-data'>
+	<br>
+	{% csrf_token %}
+	{{ ciudad_form.errors }}
+	<div class="span3">
+		<label>Pais</label>
+		{{ ciudad_form.country }}
+		<br>
+	</div>
+	<div class="span3">
+		<label>Estado</label>
+		{{ ciudad_form.region }}
+	</div>
+	<div class="span3">
+		<label>Nombre</label>
+		{{ ciudad_form.name }}
+	</div>
+	<div class="span3">
+		<label>Nombre a Mostrar</label>
+		{{ ciudad_form.display_name }}
+	</div>
+	
+	<div class="span3" style='clear:both;'>
+		<label>Ternimos de Busqueda</label>
+		{{ ciudad_form.search_names }}
+	</div>
+	<br style='clear:both;'>
+	<div class="form-actions mainmenu" style='clear:both;'>
+		<input type="submit" class="btn btn-primary" value="Guardar y Salir" />
+	</div>
+</form>
+{% include 'autocomplete_light/static.html' %}
+{% endblock %}

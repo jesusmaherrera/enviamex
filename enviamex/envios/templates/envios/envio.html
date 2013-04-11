@@ -3,8 +3,27 @@
 {% block js_code %}
 <script>
   $(function() {
-    $( "#id_fecha_salida" ).datepicker({dateFormat:'dd/mm/yy',});
-    $( "#id_fecha_llegada" ).datepicker({dateFormat:'dd/mm/yy',});
+    $( "#id_fecha_salida" ).datetimepicker({ dateFormat: 'dd/mm/yy',}).addClass("z_index10");
+    $( "#id_fecha_llegada").datetimepicker({ dateFormat: 'dd/mm/yy',}).addClass("z_index10");
+    
+    if ($('#id_estado').val() == 'E')
+      $('#fecha_de_llegada').show();
+    else
+    {
+      $('#fecha_de_llegada').hide();
+      $('#id_fecha_llegada').val("");
+    }
+
+    $('#id_estado').change(function() {
+      if ($(this).val() == 'E')
+        $('#fecha_de_llegada').show();
+      else
+      {
+        $('#fecha_de_llegada').hide();
+        $('#id_fecha_llegada').val("");
+      }
+    });
+
   });
 </script>
 {% endblock %}
@@ -19,50 +38,44 @@
     {{ envio_form.errors }}
   <br>
 {% csrf_token %}
-  <div class="span3">
+  <div class="span4">
     <label>Descripcion</label>
     {{ envio_form.descripcion }}
   </div>
-  <div class="span3">
-    <label>Fecha salida</label>
-    <div class="input-prepend input-append">
-      <span class="add-on">#</span>
-      {{ envio_form.fecha_salida }}
-    </div>
-  </div>
-  <div class="span3">
-    <label>Fecha llegada</label>
-    <div class="input-prepend input-append">
-      <span class="add-on">#</span>
-      {{ envio_form.fecha_llegada }}
-    </div>
-  </div>
-  <div class="span3" style='clear:both;'>
+  <div class="span4" >
     <label>Peso</label>
     {{ envio_form.peso }}
   </div>
-  <div class="span3">
+  <div class="span4">
     <label>Tamaño</label>
     <div class="input-prepend input-append">
       <span class="add-on">#</span>
       {{ envio_form.tamano }}
     </div>
   </div>
-  <div class="span3">
-    <label>Estado</label>
-    {{ envio_form.estado }}
+  <div class="span4" style='clear:both;'>
+    <label>Fecha salida</label>
+    <div class="input-prepend input-append">
+      <span class="add-on"><i class='icon-calendar'></i></span>
+      {{ envio_form.fecha_salida }}
+    </div>
   </div>
-  <div class="span3">
-    <label>Tipo</label>
-    {{ envio_form.tipo }}
-  </div>
-  <div style='clear:both;'>
-    <hr>
-  </div>
-  <div class="span3" style='clear:both;'>
+  <div class="span4">
     <label>Cliente</label>
     {{ envio_form.usuario }}
   </div>
+  <div class="span4" style='clear:both;'>
+    <label>Estado</label>
+    {{ envio_form.estado }}
+  </div>
+  <div id="fecha_de_llegada" class="span4">
+    <label>Fecha llegada</label>
+    <div class="input-prepend input-append">
+      <span class="add-on"><i class='icon-calendar'></i></span>
+      {{ envio_form.fecha_llegada }}
+    </div>
+  </div>
+  
   <div class="form-actions mainmenu" style='clear:both;'>
 	<input type="submit" class="btn btn-primary" value="Guardar y Salir" />
   </div>
