@@ -9,9 +9,7 @@
 
 	<div class="row">
 		<form method="post" class="" action="" width="300px"  enctype='multipart/form-data'>
-<div class="form-actions mainmenu" style='clear:both;'>
-  <a class="btn btnPrint" href="/" id="btnPrint"><i class='icon-print'></i> Reporte de Creditos</a>
-</div>  
+ 
   <br>
 {% csrf_token %}
    {% if msg %}
@@ -80,16 +78,20 @@
       {{ cliente_form.dir_no_exterior}}
     </div>
   </div>
-  <div class="span3">
+  <div class="span3" style='clear:both;'>
     <label>No Interior</label>
     <div class="input-prepend input-append">
       <span class="add-on">#</span>
       {{ cliente_form.dir_no_interior }}
     </div>
   </div>
-  <div class="span3" style='clear:both;'>
+  <div class="span3" >
     <label>Referencia</label>
     {{ cliente_form.dir_referencia }}
+  </div>
+  <div class="span3" >
+    <label>Tipo</label>
+    {{ cliente_form.tipo }}
   </div>
   {{ cliente_form.errors }}
 

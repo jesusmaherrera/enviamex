@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}Usuarios SIC{% endblock %}
+{% block breadcrumb %}{{ block.super }} <a href="/usuarios/">Usuarios</a> {% endblock %}
+{% block content %}
+  {% csrf_token %}
+  <div class="form-actions mainmenu">
+    <a class='btn' href="/usuario/">Nuevo Usuario</a>
+  </div>
+  <div class="pagination pagination-mini mainmenu">
+    <ul>
+      {% if usuariosIguales.has_previous %}
+      <li><a href="?page={{ usuariosIguales.previous_page_number }}">Anterior</a></li>
+      {% else %}
+      <li class="disabled"><a href="#">Anterior</a></li>
+      {% endif %}
+      <li class="disabled"><a href="#">Pagina {{ usuariosIguales.number }} de {{ usuariosIguales.paginator.num_pages }}.</a></li>
+      {% if usuariosIguales.has_next %}
+      <li><a href="?page={{ ciudades.next_page_number }}">Siguiente</a></li>
+      {% else %}
+      <li class="disabled"><a href="#">Siguiente</a></li>
+      {% endif %} 
+    </ul>
+  </div>
+  <div style='clear:both;'> 
+   <table class="table table-hover">
+    <tr>
+      <th>Usuario</th>
+      <th>Es Administrador</th>
+      <th></th>
+    </tr>
+    {% for usuario in usuarios %}
+    <div id="myModal{{ usuario.id}}" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3 id="myModalLabel">Seguro que Deseas Eliminar</h3>
+      </div>
+      <div class="modal-body">
+        <h4>Al eliminar este usuario</h4>
+        <p style="color:red;">Se perdera toda la informacion que este usuario tenga en la base de datos</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal">Cerrar</button>
+        <a href="/usuario/delete/{{ usuario.id }}/" class="btn btn-primary">Estoy Seguro</a>
+      </div>
+    </div>
+    <tr>
+      <td><a href="/usuario/{{ usuario.id }}">{{ usuario.username }}</a></td>
+      <td>
+        {% if usuario.is_staff %}
+          SI
+        {% else %}
+          NO
+        {% endif %}
+      </td>
+      <td style="text-align:center;">
+        {% if not usuario.id == 1 %}
+        <a href='#myModal{{ usuario.id}}' data-toggle="modal" class="btn btn-mini btn-danger"><i class="icon-trash"></i></a>
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  <br>  
+</div>
+{% endblock %}

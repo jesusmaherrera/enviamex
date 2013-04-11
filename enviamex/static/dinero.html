@@ -1,11 +1,13 @@
 <!DOCTYPE HTML>
-<html lang='es'>
+<html lang="es-MX">
 <head>
 	<title>Envío de dinero - EnviaMexPaisano.com</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
 	<meta charset="ISO 8859-1">
 	<meta name="keywords" content="envíos, mexico, estados, unidos, paquetes, paqueteria, enviamex, envio, de, dinero, exportacion, importacion, compras, por, internet, en, estados, unidos"/>
 	<meta name="description" content="Envios principalmente a México o cualquier parte del mundo. Compramos por usted en Estados Unidos y entregamos en México."/>
+	<link rel="stylesheet" href="{{STATIC_URL}}css/bootstrap.css">
+  <link rel="stylesheet" href="{{STATIC_URL}}css/layerslider.css">
 	<link rel="stylesheet" href="style.css">
 	<link rel="icon" href="favicon.ico" type="image/x-icon"/>
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
@@ -35,7 +37,7 @@
 			<div class="decoration dec-left visible-desktop"></div>
 			<div class="decoration dec-right visible-desktop"></div>	  
 			<div class="row">
-				<div id="logo" class="span3"><a href="index.html"><img src="img/logo.png" alt="Envi-A-Mex"/></a></div>
+				<div id="logo" class="span3"><a href="index.html"><img src="images/logo.png" alt="Envi-A-Mex"/></a></div>
 				<div class="span9">
 					<!-- Social Icons -->
 					<ul class="social-icons">
@@ -102,7 +104,7 @@
 		</div>
 		<div class="row">
 			<div class="span12">
-				<div class="thumbnail"><img alt="" src="img/gallery/dinero.png"/></div>
+				<div class="thumbnail"><img alt="" src="images/gallery/dinero.png"/></div>
 				<p><strong>Lorem ipsum dolor sit amet</strong>, consectetur adipiscing elit. Curabitur bibendum molestie eros a ornare. Phasellus consequat ultricies ante. Donec pharetra, elit at euismod posuere, nunc tortor viverra urna, a malesuada dui sem vitae lectus. Phasellus consequat ultricies ante. Donec pharetra, elit at euismod posuere, nunc tortor viverra urna, a malesuada dui sem vitae lectus. Phasellus consequat ultricies ante. Donec pharetra, elit at euismod posuere, nunc tortor viverra urna, a malesuada dui sem vitae lectus.</p>
 			</div>
 		</div>
@@ -110,7 +112,80 @@
 	</section>     
 </div>
 
+<footer id="footer" class="container-fluid">
+	<div class="container">
+		<section class="row">
+			<article class="span3">
+				<h3 class="title">Dirección</h3>
+				<p>Av. Hidalgo #2565 Col. Centro Cd. Cuauhtémoc, Chih. Méx.<br/> 
+				Teléfono: +52(625)5811892<br/>  
+				</p>
+                <p>Estados Unidos<br/> 
+				Teléfono: 9153073434<br/>  
+				</p>
+				<div class="link">
+					Sitio web: <a href="http://www.enviamexpaisano.com">http://www.enviamexpaisano.com</a><br>
+					Email: <a href="mailto:info@enviamexpaisano.com">info@enviamexpaisano.com</a>
+				</div>
+				<ul class="social-icons">
+					<li class="facebook"><a href="https://www.facebook.com/EnviamexPaisanoInc">Facebook</a></li>
+					<li class="twitter"><a href="https://twitter.com/EnviamexPaisano">Twitter</a></li>
+				</ul>	
+			</article>
+			<article class="span3 navblock">
+				<h3 class="title">Servicios</h3>
+				<ul> 
+					<li><a href="envios.html">Envíos a México o cualquier país</a></li>
+					<li><a href="recepcion.html">Recepción de paquetes</a></li>
+					<li><a href="dinero.html">Envío de dinero</a></li>
+					<li><a href="servicios.html">Todos nuestros servicios</a></li>
+				</ul>
+			</article>
+			<article class="span3 navblock">
+				<h3 class="title">Atención a Cliente</h3>
+				<ul> 
+					<li><a href="contacto.html">Contáctenos</a></li>
+					<li><a href="contacto.html">Ubicación</a></li>
+					<li><a href="clientes.html">Clientes</a></li>
+				</ul>
+			</article>
+			<article class="span3">
+				<img alt="" src="images/logofooter.png" class="slogo"/>
+				<p>Envíos principalmente a México o cualquier parte del mundo (DHL, FedEX, UPS, Correo Americano, Estafeta, Redpack y Multipack) Realizamos sus compras por internet, reciba sus paquetes en México, desde Estados Unidos.</p>
+			</article>
+		</section>
+		<div class="back-top up"><a href="#top"></a></div>
+	</div>
+</footer>
+<footer class="footer-line container-fluid">
+	<div class="container">
+		<div class="row-fluid">
+			<div class="span8 alignleft">ENVI-A-MEX Paisano Inc. | <a href="http://www.conectbit.com">Sitio desarrollado por ConectBIT</a></div>
+			<div class="span4 alignright hidden-phone"><a href="http://www.enviamexpaisano.com">Inicio</a> | <a href="contacto.html">Contacto</a> | <a href="servicios.html">Servicios</a> | <a href="#top" class="top up">Ir Arriba</a></div>
+		</div>
+	</div>
+</footer>
 
+<!-- begin olark code -->
+<script data-cfasync="false" type='text/javascript'>/*<![CDATA[*/window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){
+f[z]=function(){
+(a.s=a.s||[]).push(arguments)};var a=f[z]._={
+},q=c.methods.length;while(q--){(function(n){f[z][n]=function(){
+f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={
+0:+new Date};a.P=function(u){
+a.p[u]=new Date-a.p[0]};function s(){
+a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){
+hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){
+return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){
+b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{
+b.contentWindow[g].open()}catch(w){
+c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{
+var t=b.contentWindow[g];t.write(p());t.close()}catch(x){
+b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({
+loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
+/* custom configuration goes here (www.olark.com/documentation) */
+olark.identify('9197-438-10-3080');/*]]>*/</script><noscript><a href="https://www.olark.com/site/9197-438-10-3080/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript>
+<!-- end olark code -->
 
 
 </body>

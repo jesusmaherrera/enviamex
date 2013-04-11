@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Usuario SIC{% endblock %}
+{% block js_code %}{% endblock %}
+{% block breadcrumb %}{{ block.super }} <a href="/usuarios/">Usuarios</a> > Usuario{% endblock %}
+{% block content %}
+<form method="post" class="" action="" width="300px"  enctype='multipart/form-data'>
+  <br>
+{% csrf_token %}
+  {{ usuario_form }}
+  <!-- <div class="span3">
+    <label>Nombre</label>
+    {{ usuario_form.nombre }}
+  </div> -->
+  {{ usuario_form.errors }}
+
+  
+  <div class="form-actions mainmenu" style='clear:both;'>
+	<input type="submit" class="btn btn-primary" value="Guardar y Salir" />
+  </div>
+</form>
+{% endblock %}

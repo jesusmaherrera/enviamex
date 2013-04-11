@@ -19,6 +19,11 @@ class Cliente(models.Model):
 	dir_referencia = models.CharField(max_length=100, blank=True, null=True)
 	usuario = models.OneToOneField(User, blank=True, null=True)
 	telefono = models.CharField(default='', max_length=10, blank=True, null=True)
+	TIPOS = (
+		('A', 'Administrador'),
+		('C', 'Cliente'),
+		)
+	tipo = models.CharField(max_length=10, choices=TIPOS, default='C')
 
 	ocupacion = models.CharField(max_length=30, blank=True, null=True)
 	

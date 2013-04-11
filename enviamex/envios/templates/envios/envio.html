@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}Envio{% endblock %}
+{% block js_code %}
+<script>
+  $(function() {
+    $( "#id_fecha_salida" ).datepicker({dateFormat:'dd/mm/yy',});
+    $( "#id_fecha_llegada" ).datepicker({dateFormat:'dd/mm/yy',});
+  });
+</script>
+{% endblock %}
+{% block content %}
+<div class="container">
+	<div id="headline-page">
+		<h1>Envio</h1>
+	</div>
+
+	<div class="row">
+		<form method="post" class="" action="" width="300px"  enctype='multipart/form-data'>
+    {{ envio_form.errors }}
+  <br>
+{% csrf_token %}
+  <div class="span3">
+    <label>Descripcion</label>
+    {{ envio_form.descripcion }}
+  </div>
+  <div class="span3">
+    <label>Fecha salida</label>
+    <div class="input-prepend input-append">
+      <span class="add-on">#</span>
+      {{ envio_form.fecha_salida }}
+    </div>
+  </div>
+  <div class="span3">
+    <label>Fecha llegada</label>
+    <div class="input-prepend input-append">
+      <span class="add-on">#</span>
+      {{ envio_form.fecha_llegada }}
+    </div>
+  </div>
+  <div class="span3" style='clear:both;'>
+    <label>Peso</label>
+    {{ envio_form.peso }}
+  </div>
+  <div class="span3">
+    <label>Tamaño</label>
+    <div class="input-prepend input-append">
+      <span class="add-on">#</span>
+      {{ envio_form.tamano }}
+    </div>
+  </div>
+  <div class="span3">
+    <label>Tipo</label>
+    {{ envio_form.tipo }}
+  </div>
+  <div style='clear:both;'>
+    <hr>
+  </div>
+  <div class="span3" style='clear:both;'>
+    <label>Cliente</label>
+    {{ envio_form.cliente }}
+  </div>
+  <div class="form-actions mainmenu" style='clear:both;'>
+	<input type="submit" class="btn btn-primary" value="Guardar y Salir" />
+  </div>
+</form>
+	</div>
+</div>
+{% endblock %}
