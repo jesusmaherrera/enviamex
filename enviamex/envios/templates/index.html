@@ -1,16 +1,372 @@
-{% extends "base.html" %}
+{% extends "base-index.html" %}
 {% block title %}Inicio{% endblock %}
+{% block js_code %}
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#layerslider').layerSlider({
+        autoStart : true,
+        hoverPrevNext : false,
+        animateFirstLayer : false,
+        thumbnailNavigation : false
+      });
+    });   
+  </script>
+  {% endblock %}
+{% block slider %}
+<div class="span12 main-slider">
+          <div id="layerslider-container">  
+            <div id="layerslider" style="width: 100%; height: 380px; visibility: visible;" class="ls-container ls-glass">
+              <div class="ls-inner" style="background-color: rgba(0, 0, 0, 0); width: 940px; height: 380px;"><div class="ls-layer ls-active" style="width: 940px; height: 380px; visibility: visible; display: none;">
+                <img alt="" src="{{STATIC_URL}}img/1p.png" class="ls-bg" style="right: 0px; width: 960px; height: 380px; margin-left: -480px; margin-top: -190px;">
+                <div class="ls-s1 hidden-phone" style="top:0px; left:0px; slidedirection : right; slideoutdirection : right; durationin : 2000; durationout : 1500; easingin : easeOutElastic; easingout : easeInOutQuint; delayin : 1000;"><img alt="" src="{{STATIC_URL}}img/sliders/slider0.png"></div>
+                <img alt="" src="{{STATIC_URL}}img/sb1.png" class="ls-s6 visible-phone" style="top: 0px; left: 752px;">
+                <img alt="" src="{{STATIC_URL}}img/51.png" class="ls-s2" style="top:80px; left:35px; slidedirection : left; slideoutdirection : left; durationin : 2000; durationout : 1500; easingin : easeOutElastic; easingout : easeInOutQuint; delayin : 1000;">
+                <a href="#" class="ls-s3" style="top:230px; left:190px; slidedirection : bottom; slideoutdirection : bottom; durationin : 2000; durationout : 1500; easingin : easeOutElastic; easingout : easeInOutQuint; delayin : 2500;">Leer más</a>
+                <div class="ls-s4 hidden-phone" style="top:160px; left:150px; slidedirection :right; slideoutdirection : right; durationin : 2000; durationout : 1500; easingin : easeOutElastic; easingout : easeInOutQuint; delayin : 2500;">Envíos principalmente a México o cualquier parte del mundo (DHL, Estafeta, redpack, Multipack, UPS, fedex, correo americano).</div>
+                <div class="ls-s5" style="top:100px; left:120px; slidedirection :top; slideoutdirection :top; durationin : 2000; durationout : 1500; easingin : easeOutElastic; easingout : easeInOutQuint; delayin : 2500;">Envíos</div>
+              </div><div class="ls-layer" style="width: 940px; height: 380px;">
+                <img alt="" src="{{STATIC_URL}}img/1p.png" class="ls-bg" style="slidedisrection : fade; durationin : 1000; durationout : 1000; easingin : easeOutExpo; delayin :0;">
+                <div class="ls-s1 hidden-phone" style="top:0px; left:0px; slidedirection : right; slideoutdirection : right; durationin : 2000; durationout : 1500; easingin : easeOutElastic; easingout : easeInOutQuint; delayin : 1000;"><img alt="" src="{{STATIC_URL}}img/sliders/slider1.png"></div>
+                <img alt="" src="{{STATIC_URL}}img/sb1.png" class="ls-s6 visible-phone" style="top: 0px; left: 70%;">
+                <img alt="" src="{{STATIC_URL}}img/bd1.png" class="ls-s2" style="top:80px; left:35px; slidedirection : left; slideoutdirection : left; durationin : 2000; durationout : 1500; easingin : easeOutElastic; easingout : easeInOutQuint; delayin : 1000;">
+                <a href="#" class="ls-s3" style="top:230px; left:190px; slidedirection : bottom; slideoutdirection : bottom; durationin : 2000; durationout : 1500; easingin : easeOutElastic; easingout : easeInOutQuint; delayin : 2500;">Leer más</a>
+                <div class="ls-s4 hidden-phone" style="top:160px; left:150px; slidedirection :right; slideoutdirection : right; durationin : 2000; durationout : 1500; easingin : easeOutElastic; easingout : easeInOutQuint; delayin : 2500;">Realizamos compras por usted.</div>
+                <div class="ls-s5" style="top:100px; left:120px; slidedirection :top; slideoutdirection :top; durationin : 2000; durationout : 1500; easingin : easeOutElastic; easingout : easeInOutQuint; delayin : 2500;">Compra por Internet</div>
+              </div><div class="ls-layer" style="width: 940px; height: 380px;">
+                <img alt="" src="{{STATIC_URL}}img/1p.png" class="ls-bg" style="slidedisrection : fade; durationin : 1000; durationout : 1000; easingin : easeOutExpo; delayin :0;">
+                <div class="ls-s1 hidden-phone" style="top:0px; left:0px; slidedirection : right; slideoutdirection : right; durationin : 2000; durationout : 1500; easingin : easeOutElastic; easingout : easeInOutQuint; delayin : 1000;"><img alt="" src="{{STATIC_URL}}img/sliders/slider2.png"></div>
+                <img alt="" src="{{STATIC_URL}}img/sb1.png" class="ls-s6 visible-phone" style="top: 0px; left: 70%;">
+                <img alt="" src="{{STATIC_URL}}img/51.png" class="ls-s2" style="top:80px; left:35px; slidedirection : left; slideoutdirection : left; durationin : 2000; durationout : 1500; easingin : easeOutElastic; easingout : easeInOutQuint; delayin : 1000;">
+                <a href="#" class="ls-s3" style="top:230px; left:190px; slidedirection : bottom; slideoutdirection : bottom; durationin : 2000; durationout : 1500; easingin : easeOutElastic; easingout : easeInOutQuint; delayin : 2500;">Leer más</a>
+                <div class="ls-s4 hidden-phone" style="top:160px; left:150px; slidedirection :right; slideoutdirection : right; durationin : 2000; durationout : 1500; easingin : easeOutElastic; easingout : easeInOutQuint; delayin : 2500;">Realiza tus compras en las mejores tiendas de EEUU por Internet, catálogo o teléfono utilizando tu dirección de Enviamex y recibe en tu domicilio.</div>
+                <div class="ls-s5" style="top:100px; left:120px; slidedirection :top; slideoutdirection :top; durationin : 2000; durationout : 1500; easingin : easeOutElastic; easingout : easeInOutQuint; delayin : 2500;">Paquetería</div>
+              </div><div class="ls-layer" style="width: 940px; height: 380px;">
+                <img alt="" src="{{STATIC_URL}}img/1p.png" class="ls-bg" style="slidedisrection : fade; durationin : 1000; durationout : 1000; easingin : easeOutExpo; delayin :0;">
+                <div class="ls-s1 hidden-phone" style="top:0px; left:0px; slidedirection : right; slideoutdirection : right; durationin : 2000; durationout : 1500; easingin : easeOutElastic; easingout : easeInOutQuint; delayin : 1000;"><img alt="" src="{{STATIC_URL}}img/sliders/slider3.png"></div>
+                <img alt="" src="{{STATIC_URL}}img/sb1.png" class="ls-s6 visible-phone" style="top: 0px; left: 70%;">
+                <img alt="" src="{{STATIC_URL}}img/bd1.png" class="ls-s2" style="top:80px; left:35px; slidedirection : left; slideoutdirection : left; durationin : 2000; durationout : 1500; easingin : easeOutElastic; easingout : easeInOutQuint; delayin : 1000;">
+                <a href="#" class="ls-s3" style="top:230px; left:190px; slidedirection : bottom; slideoutdirection : bottom; durationin : 2000; durationout : 1500; easingin : easeOutElastic; easingout : easeInOutQuint; delayin : 2500;">Leer más</a>
+                <div class="ls-s4 hidden-phone" style="top:160px; left:150px; slidedirection :right; slideoutdirection : right; durationin : 2000; durationout : 1500; easingin : easeOutElastic; easingout : easeInOutQuint; delayin : 2500;">Enviamos medicamento de México a EE.UU. y Canadá.</div>
+                <div class="ls-s5" style="top:100px; left:120px; slidedirection :top; slideoutdirection :top; durationin : 2000; durationout : 1500; easingin : easeOutElastic; easingout : easeInOutQuint; delayin : 2500;">Medicamentos</div>
+              </div></div>
+              
+              
+              
+            <a class="ls-nav-prev" href="#"></a><a class="ls-nav-next" href="#"></a><div class="ls-bottom-nav-wrapper"><a class="ls-nav-start ls-nav-start-active" href="#"></a><span class="ls-bottom-slidebuttons"><a href="#" class="ls-nav-active"></a><a href="#"></a><a href="#"></a><a href="#"></a></span><a class="ls-nav-stop" href="#"></a></div><div class="ls-shadow" style="height: 0px;"></div></div>    
+          </div>      
+        </div>
+{% endblock %}
 
 {% block content %}
-<div class="container">
-	<div id="headline-page">
-		<h1>Envíos de dinero a México y Estados Unidos.</h1>
-	</div>
-	<div class="row">
-		<div class="span12">
-			<div class="thumbnail"><img alt="" src="#"/></div>
-			<p><strong>Lorem ipsum dolor sit amet</strong>, consectetur adipiscing elit. Curabitur bibendum molestie eros a ornare. Phasellus consequat ultricies ante. Donec pharetra, elit at euismod posuere, nunc tortor viverra urna, a malesuada dui sem vitae lectus. Phasellus consequat ultricies ante. Donec pharetra, elit at euismod posuere, nunc tortor viverra urna, a malesuada dui sem vitae lectus. Phasellus consequat ultricies ante. Donec pharetra, elit at euismod posuere, nunc tortor viverra urna, a malesuada dui sem vitae lectus.</p>
-		</div>
-	</div>
-</div>
+<div class="row">
+      <div class="span9">
+        <h1>ENVI-A-MEX Paisano Inc. - Envíos a México o cualquier parte del mundo.</h1>
+        <span class="purchase">DHL, Estafeta, Redpack, Multipack, UPS, Fedex, USPS.</span>
+      </div>
+      <div class="span3 aligncenter"><a href="contacto.html" class="button large red">Contáctenos</a></div>
+    </div>
+    <div class="row">
+      <div class="span12">
+        <div class="row">
+          <div class="span3">
+            <a href="#" class="link-block">
+              <span class="move-item icon-1 move-bg-icon"></span>
+              <h2 class="move-item">Envíos</h2>
+              <p class="move-item">A México o cualquier parte del mundo. </p>
+            </a>
+          </div>
+          <div class="span3">
+            <a href="#" class="link-block">
+              <span class="move-item icon-2 move-bg-icon"></span>
+              <h2 class="move-item">Servicio terrestre</h2>
+              <p class="move-item">De México a EUA y Canadá el servicio terrestre más económico, en México solo lo tiene envi-a-mex paisano inc. </p>
+            </a>
+          </div>
+          <div class="span3">
+            <a href="#" class="link-block">
+              <span class="move-item icon-3 move-bg-icon"></span>
+              <h2 class="move-item">Importación y Exportación</h2>
+              <p class="move-item">Importación y exportación de paquetes y productos. </p>
+            </a>
+          </div>
+          <div class="span3">
+            <a href="#" class="link-block">
+              <span class="move-item icon-4 move-bg-icon"></span>
+              <h2 class="move-item">Envíos de Dinero</h2>
+              <p class="move-item">Envíos de dinero a México y EE.UU. </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span12">
+        <div class="title"><h2>Servicios de paquetería</h2></div>
+        <div id="MeetOurDoctor1" class="carousel slide hidden-phone">
+          <div class="carousel-inner">
+            <div class="item active">
+              <div class="row">
+                <div class="span3">
+                  <a href="#" class="link-img">
+                    <div class="img-border">
+                      <div class="img-block">
+                        <img alt="" src="{{STATIC_URL}}img/couriers/ups.jpg">
+                        <div class="link-img-bg">
+                          <div class="group">
+                            <h4>UPS</h4>
+                            <p>United Parcel Service of America</p> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="span3">
+                  <a href="#" class="link-img">
+                    <div class="img-border">
+                      <div class="img-block">
+                        <img alt="" src="{{STATIC_URL}}img/couriers/fedex.jpg">
+                        <div class="link-img-bg">
+                          <div class="group">
+                            <h4>FedEx</h4>
+                            <p>FedEx Corporation</p>  
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="span3">
+                  <a href="#" class="link-img">
+                    <div class="img-border">
+                      <div class="img-block">
+                        <img alt="" src="{{STATIC_URL}}img/couriers/dhl.jpg">
+                        <div class="link-img-bg">
+                          <div class="group">
+                            <h4>DHL</h4>
+                            <p></p> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="span3">
+                  <a href="#" class="link-img">
+                    <div class="img-border">
+                      <div class="img-block">
+                        <img alt="" src="{{STATIC_URL}}img/couriers/usps.jpg">
+                        <div class="link-img-bg">
+                          <div class="group">
+                            <h4>USPS</h4>
+                            <p>Correo Americano</p> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="row">
+                <div class="span3">
+                  <a href="#" class="link-img">
+                    <div class="img-border">
+                      <div class="img-block">
+                        <img alt="" src="{{STATIC_URL}}img/couriers/estafeta.jpg">
+                        <div class="link-img-bg">
+                          <div class="group">
+                            <h4>Estafeta</h4>
+                            <p></p> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="span3">
+                  <a href="#" class="link-img">
+                    <div class="img-border">
+                      <div class="img-block">
+                        <img alt="" src="{{STATIC_URL}}img/couriers/redpack.jpg">
+                        <div class="link-img-bg">
+                          <div class="group">
+                            <h4>Redpack</h4>
+                            <p></p> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="span3">
+                  <a href="#" class="link-img">
+                    <div class="img-border">
+                      <div class="img-block">
+                        <img alt="" src="{{STATIC_URL}}img/couriers/multipack.jpg">
+                        <div class="link-img-bg">
+                          <div class="group">
+                            <h4>Multipack</h4>
+                            <p></p> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="span3">
+                  <a href="#" class="link-img">
+                    <div class="img-border">
+                      <div class="img-block">
+                        <img alt="" src="{{STATIC_URL}}img/couriers/dhl.jpg">
+                        <div class="link-img-bg">
+                          <div class="group">
+                            <h4>DHL</h4>
+                            <p></p> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="prew-slide nav-slider" href="#MeetOurDoctor1" data-slide="prev">‹</a>
+          <a class="next-slide nav-slider" href="#MeetOurDoctor1" data-slide="next">›</a>           
+        </div>
+        <div id="MeetOurDoctor3" class="carousel slide visible-phone">
+          <div class="carousel-inner">
+            <div class="item active row">
+              <div class="span3">
+                <a href="#" class="link-img floatleft">
+                  <div class="img-border">
+                    <div class="img-block">
+                      <img alt="" src="{{STATIC_URL}}img/couriers/ups.jpg">
+                      <div class="link-img-bg">
+                        <div class="group">
+                          <h4>UPS</h4>
+                          <p></p> 
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="item row">
+              <div class="span3">
+                <a href="#" class="link-img floatleft">
+                  <div class="img-border">
+                    <div class="img-block">
+                      <img alt="" src="{{STATIC_URL}}img/couriers/fedex.jpg">
+                      <div class="link-img-bg">
+                        <div class="group">
+                          <h4>FedEx</h4>
+                          <p></p> 
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="item row">
+              <div class="span3">
+                <a href="#" class="link-img floatleft">
+                  <div class="img-border">
+                    <div class="img-block">
+                      <img alt="" src="{{STATIC_URL}}img/couriers/dhl.jpg">
+                      <div class="link-img-bg">
+                        <div class="group">
+                          <h4>DHL</h4>
+                          <p></p> 
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="item row">
+              <div class="span3">
+                <a href="#" class="link-img floatleft">
+                  <div class="img-border">
+                    <div class="img-block">
+                      <img alt="" src="{{STATIC_URL}}img/couriers/usps.jpg">
+                      <div class="link-img-bg">
+                        <div class="group">
+                          <h4>USPS</h4>
+                          <p>Correo Americano</p> 
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <a class="prew-slide nav-slider" href="#MeetOurDoctor3" data-slide="prev">‹</a>
+          <a class="next-slide nav-slider" href="#MeetOurDoctor3" data-slide="next">›</a>           
+        </div>  
+        <a href="#" class="button small red floatright">Couriers</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span4">
+        <div class="title"><h2>Más información</h2></div>
+        <p><i>Horario de atención 07:00 - 20:00 .</i></p>
+        <p>
+        <span class="phone contact">+526255811892</span>
+        <a href="mailto:info@enviamexpaisano.com" class="email contact">info@enviamexpaisano.com</a>
+        </p>
+        <a href="#" class="button small red">Formulario de contacto</a>
+      </div>
+      <div class="span4">
+        <div class="title"><h2>Servicios</h2></div>
+        <ul class="service-list">
+          <li>Envíos a México o cualquier país</li>
+          <li>Compras por Internet</li>
+          <li>Renta de direcciones en EE.UU.</li>
+          <li>Envío de dinero a México y EE.UU.</li>
+          <li>Importación y Exportación de paquetes y productos</li>
+          <li>Recepción de paquetes en EE.UU. entregamos a todo México</li>
+          <li>Servicio de envíos y transporte puerta a puerta</li>
+          <li>Envíos de medicamento de México a EE.UU. y Canadá</li>
+          <li>Servicio terrestre de México a EE.UU. y Canadá</li>
+        </ul>
+        <p><a href="#">Todos nuestros servicios →</a></p>
+      </div>
+      <div class="span4">
+        <div class="title"><h2>Título provisional:</h2></div>
+        <div class="carousel slide review-slider" id="MeetOurDoctor4">
+        <div class="blockquote-line" style="height: 185px;"><div class="blockquote-pattern"></div></div>
+          <div class="carousel-inner review-inner">
+            <div class="active item">
+              <div class="blockquote" style="height: 120px;">Texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo.</div>
+              <div class="md" style="display: block;">
+                <img alt="" src="{{STATIC_URL}}img/gallery/11.jpg">
+                <div class="md-name">
+                  <strong>Estafeta</strong>, Mexicana
+                  <div class="company-name">...</div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="blockquote">Texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo texto de ejemplo.</div>
+              <div class="md">
+                <img alt="" src="{{STATIC_URL}}img/gallery/12.jpg">
+                <div class="md-name">
+                  <strong>UPS</strong>...
+                  <div class="company-name">...</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="prew-slide nav-slider" href="#MeetOurDoctor4" data-slide="prev">‹</a>
+          <a class="next-slide nav-slider" href="#MeetOurDoctor4" data-slide="next">›</a>
+        </div>              
+      </div>  
+    </div>
 {% endblock %}

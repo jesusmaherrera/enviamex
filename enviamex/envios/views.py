@@ -219,12 +219,12 @@ def ciudad_manageView(request, id = None, template_name='ciudades/ciudad.html'):
 		Ciudad_form = CiudadManageForm(request.POST, request.FILES, instance=ciudad)
 
 		if Ciudad_form.is_valid():
-			if request.user.has_perm('creditos.change_city'):
+			if request.user.has_perm('envios.change_city'):
 				Ciudad_form.save()
 			
 			return HttpResponseRedirect('/ciudades/')
 	else:
-		if request.user.has_perm('creditos.add_city'):
+		if request.user.has_perm('envios.add_city'):
 			Ciudad_form = CiudadManageForm(instance=ciudad)
 		else:
 			return HttpResponseRedirect('/ciudades/')
@@ -259,7 +259,7 @@ def ciudades_View(request, template_name='ciudades/ciudades.html'):
 
 @login_required(login_url='/login/')
 def ciudad_deleteView(request, id = None, template_name='ciudades/ciudades.html'):
-	if request.user.has_perm('creditos.delete_ciudad'):
+	if request.user.has_perm('envios.delete_ciudad'):
 		ciudad = get_object_or_404(City, pk=id)
 		ciudad.delete()
 

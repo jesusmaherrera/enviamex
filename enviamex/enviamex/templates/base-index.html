@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<html lang="es-MX"><head>
+  <title>ENVI-A-MEX Paisano Inc.</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+  <meta name="keywords" content="envíos, mexico, estados, unidos, paquetes, paqueteria, enviamex, envio, de, dinero, exportacion, importacion, compras, por, internet, en, estados, unidos">
+  <meta name="description" content="Envios principalmente a México o cualquier parte del mundo. Compramos por usted en Estados Unidos y entregamos en su domicilio.">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+  <link href="{{STATIC_URL}}css/bootstrap.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" href="{{STATIC_URL}}style.css" media="screen">
+  
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <script async="" defer="true" src="http://static.olark.com/jsclient/plugins/sounds.js?v=1"></script><script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+  <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
+  <script src="{{STATIC_URL}}js/jquery.color.js"></script>
+  <script src="{{STATIC_URL}}js/custom.js"></script>
+  <script src='{{STATIC_URL}}js/jquery-ui-1.8.23.custom.min.js'></script>
+  <script src='{{STATIC_URL}}js/jquery-ui-timepicker.js'></script>
+  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="{{STATIC_URL}}js/jquery-easing-1.3.js" type="text/javascript"></script>
+  <script src="{{STATIC_URL}}js/layerslider.kreaturamedia.jquery.js" type="text/javascript"></script>
+  
+  {% block js_code %}
+  {% endblock %}
+<link rel="stylesheet" href="{{STATIC_URL}}/layerslider/skins/glass/skin.css" type="text/css"><script src="http://static.olark.com/jsclient/application.js?v=9675709ce9c9d809d31dca7934c79964" async="" defer=""></script><style type="text/css">.olark-key,#hbl_code,#olark-data{display: none !important;}</style><link id="habla_style_div" type="text/css" rel="stylesheet" href="http://static.olark.com/css/4/1/41a08e61c3f2381b653891a887a3a93e.css?http"><style type="text/css">@media print {#habla_beta_container_do_not_rely_on_div_classes_or_names {display: none !important}}</style></head>
+<body><div style="display: none;" id="olark"><olark><iframe frameborder="0" id="olark-loader"></iframe></olark></div>
+<div id="wrapper">
+  <header id="header" class="container-fluid main">
+    <div class="header-bg">
+    <div class="container">
+      <div class="decoration dec-left visible-desktop"></div>
+      <div class="decoration dec-right visible-desktop"></div>    
+      <div class="row">
+        <div id="logo" class="span3"><img src="{{STATIC_URL}}img/logo.png" alt="ENVI-A-MEX"></div>
+        <div class="span9">
+          <!-- Social Icons -->
+          <ul class="social-icons">
+            {% if not user.is_anonymous %}
+            {{ user.username }} <a class="btn btn-mini btn-danger btn_log" href="/logout/">  Salir</a>
+            {% else %}  
+            <a  class=" btn btn-mini btn_log" href="/login/">Iniciar Sesión</a>
+            {% endif %}
+            <li class="facebook"><a href="https://www.facebook.com/EnviamexPaisanoInc">Facebook</a></li>
+            <li class="twitter"><a href="https://twitter.com/EnviamexPaisano">Twitter</a></li>
+          </ul> 
+          <!-- Contact Details -->
+          <div class="contact-details visible-desktop">
+            <ul>
+              {% if user.is_anonymous %}{% endif %}
+              <li><a href="/cliente/" >Registrarse</a> / Contáctenos: <a href="#" class="tel">+526255811892</a></li>
+              <li>Av. Hidalgo #2565, Centro, Cd. Cuauhtémoc, Chih. Mex. <a href="mailto:info@enviamexpaisano.com">info@enviamexpaisano.com</a></li>
+            </ul>
+          </div>      
+          <!-- Search Form -->
+          <div class="search-form">
+            <form method="get" action="#">
+              <input type="text" value="Buscar en Envi-A-Mex" class="search-text-box" style=" line-height: 2; color: #808285; height: 27px; padding: 0 10px; border: 0; font-size:13px; position: absolute; text-indent: 0px; top: 0px; zoom: 1; box-shadow: none; border-radius: 0px;">
+              <input type="submit" value="" class="search-text-submit">
+            </form>
+          </div>    
+        </div>  
+      </div>
+      <div class="row">
+        <div class="span12">
+          <div class="select-menu hidden-desktop">
+            <select id="selectMenu">
+              <option value="index.html">Inicio</option>
+              <option value="servicios.html">- Servicios</option>
+              <option value="envios.html">- Envíos</option>
+              <option value="recepcion.html">- Recepción de paquetes</option>           
+              <option value="dinero.html">Envío de Dinero</option>            
+              <option value="contacto.html">Contáctenos</option>          
+              <option selected="" value="clientes.html">Clientes</option>
+            </select>
+          </div>
+          <ul id="menu" class="visible-desktop">
+            <li>
+              <a href="index.html">Inicio</a>
+            </li>
+            <li>
+              <a href="servicios.html">Servicios</a>
+              <ul> 
+                <li><a href="/envios/">Envíos</a></li>
+                <li><a href="recepcion.html">Recepción de paquetes</a></li>
+                <li><a href="dinero.html">Envío de dinero</a></li>
+              </ul>
+            </li>
+             
+            <li><a href="contacto.html">Contactenos</a></li> 
+            {% if user.is_staff %}
+            <li><a href="/clientes/">Clientes</a></li>
+            <li>
+              <a href="#">Mas</a>
+              <ul> 
+                <li><a href="/ciudades/">Ciudades</a></li>
+              </ul>
+            </li>
+            {% endif%}
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        {% block slider %}
+        {% endblock %}
+      </div>
+    </div>
+    </div>
+    <!-- LiveZilla Chat Button Link Code (ALWAYS PLACE IN BODY ELEMENT) --><div style="display:none;"><a href="javascript:void(window.open('http://enviamexpaisano.com//chat/chat.php','','width=590,height=610,left=0,top=0,resizable=yes,menubar=no,location=no,status=yes,scrollbars=yes'))"><img id="chat_button_image" src="http://enviamexpaisano.com//chat/image.php?id=05&amp;type=overlay" width="37" height="123" border="0" alt="LiveZilla Live Help"></a></div><!-- http://www.LiveZilla.net Chat Button Link Code --><!-- LiveZilla Tracking Code (ALWAYS PLACE IN BODY ELEMENT) --><div id="livezilla_tracking" style="display:none"><script type="text/javascript" src="http://enviamexpaisano.com//chat/server.php?request=track&amp;output=jcrpt&amp;fbpos=10&amp;fbml=0&amp;fbmt=0&amp;fbmr=0&amp;fbmb=0&amp;fbw=37&amp;fbh=123&amp;fboo=1&amp;nse=0.06889525521546602"></script></div><script type="text/javascript">
+var script = document.createElement("script");script.type="text/javascript";var src = "http://enviamexpaisano.com//chat/server.php?request=track&output=jcrpt&fbpos=10&fbml=0&fbmt=0&fbmr=0&fbmb=0&fbw=37&fbh=123&fboo=1&nse="+Math.random();setTimeout("script.src=src;document.getElementById('livezilla_tracking').appendChild(script)",1);</script><noscript>&lt;img src="http://enviamexpaisano.com//chat/server.php?request=track&amp;amp;output=nojcrpt&amp;amp;fbpos=10&amp;amp;fbml=0&amp;amp;fbmt=0&amp;amp;fbmr=0&amp;amp;fbmb=0&amp;amp;fbw=37&amp;amp;fbh=123&amp;amp;fboo=1" width="0" height="0" style="visibility:hidden;" alt=""&gt;</noscript><!-- http://www.LiveZilla.net Tracking Code -->
+<!-- begin olark code -->
+<script data-cfasync="false" type="text/javascript">/*<![CDATA[*/window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){
+f[z]=function(){
+(a.s=a.s||[]).push(arguments)};var a=f[z]._={
+},q=c.methods.length;while(q--){(function(n){f[z][n]=function(){
+f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={
+0:+new Date};a.P=function(u){
+a.p[u]=new Date-a.p[0]};function s(){
+a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){
+hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){
+return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){
+b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{
+b.contentWindow[g].open()}catch(w){
+c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{
+var t=b.contentWindow[g];t.write(p());t.close()}catch(x){
+b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({
+loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
+/* custom configuration goes here (www.olark.com/documentation) */
+olark.identify('9197-438-10-3080');/*]]>*/</script><noscript>&lt;a href="https://www.olark.com/site/9197-438-10-3080/contact" title="Contact us" target="_blank"&gt;Questions? Feedback?&lt;/a&gt; powered by &lt;a href="http://www.olark.com?welcome" title="Olark live chat software"&gt;Olark live chat software&lt;/a&gt;</noscript>
+<!-- end olark code -->
+
+  </header>
+  <section id="content" class="container-fluid">
+  <div class="container">
+     {% block content %}
+
+      {% endblock %}
+  </div>
+  </section>
+</div>
+
+
+
+<footer id="footer" class="container-fluid">
+  <div class="container">
+    <section class="row">
+      <article class="span3">
+        <h3 class="title">Dirección</h3>
+        <p>Av. Hidalgo #2565 Col. Centro Cd. Cuauhtémoc, Chih. Méx.<br> 
+        Teléfono: +52(625)5811892<br>  
+        </p>
+                <p>Estados Unidos<br> 
+        Teléfono: 9153073434<br>  
+        </p>
+        <div class="link">
+          Sitio web: <a href="http://www.enviamexpaisano.com">http://www.enviamexpaisano.com</a><br>
+          Email: <a href="mailto:info@enviamexpaisano.com">info@enviamexpaisano.com</a>
+        </div>
+        <ul class="social-icons">
+          <li class="facebook"><a href="https://www.facebook.com/EnviamexPaisanoInc">Facebook</a></li>
+          <li class="twitter"><a href="https://twitter.com/EnviamexPaisano">Twitter</a></li>
+        </ul> 
+      </article>
+      <article class="span3 navblock">
+        <h3 class="title">Servicios</h3>
+        <ul> 
+          <li><a href="envios.html">Envíos a México o cualquier país</a></li>
+          <li><a href="recepcion.html">Recepción de paquetes</a></li>
+          <li><a href="dinero.html">Envío de dinero</a></li>
+          <li><a href="servicios.html">Todos nuestros servicios</a></li>
+        </ul>
+      </article>
+      <article class="span3 navblock">
+        <h3 class="title">Atención a Cliente</h3>
+        <ul> 
+          <li><a href="contacto.html">Contáctenos</a></li>
+          <li><a href="contacto.html">Ubicación</a></li>
+          <li><a href="clientes.html">Clientes</a></li>
+        </ul>
+      </article>
+      <article class="span3">
+        <img alt="" src="{{STATIC_URL}}img/logofooter.png" class="slogo">
+        <p>Envíos principalmente a México o cualquier parte del mundo (DHL, FedEX, UPS, Correo Americano, Estafeta, Redpack y Multipack) Realizamos sus compras por internet, reciba sus paquetes en México, desde Estados Unidos.</p>
+      </article>
+    </section>
+</div></footer>
+<footer class="footer-line container-fluid">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span8 alignleft">ENVI-A-MEX Paisano Inc. | <a href="http://www.conectbit.com">Sitio desarrollado por ConectBIT</a></div>
+      <div class="span4 alignright hidden-phone"><a href="http://www.enviamexpaisano.com">Inicio</a> | <a href="contacto.html">Contacto</a> | <a href="servicios.html">Servicios</a> | <a href="#top" class="top up" style="display: none;">Ir Arriba</a></div>
+    </div>
+  </div>
+</footer>
+
+<div id="window-resizer-tooltip" style="display: none;"><a href="#" title="Edit settings" style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/{{STATIC_URL}}img/icon_19.png);"></a><span class="tooltipTitle">Window size: </span><span class="tooltipWidth" id="winWidth">1280</span> x <span class="tooltipHeight" id="winHeight">800</span><br><span class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth">1278</span> x <span class="tooltipHeight" id="vpHeight">144</span></div><span style="display: none;"><iframe style="display: none !important" id="framesocket15553" src="https://static.olark.com/jsclient/storage.html?v=c7a4c9237f317042c3becc9192565e4a#TK8656819621101022" onload="try{window.framesocket15553()}catch(e){framesocket15553()}"></iframe></span><div id="habla_beta_container_do_not_rely_on_div_classes_or_names" class="habla-browser-mozilla habla-desktop olrk-noquirks"><div id="hbl_operator_state_div" class="olrk-away"><div id="hbl_region" class="olrk-normal"><div id="habla_window_state_div" class=" olrk-state-compressed"><div id="habla_window_div" style="margin: 0px 20px; bottom: 0px; right: 0px; display: none; position: fixed;" class="habla_window_div_base hbl_pal_main_width olrk-fixed-bottom olrk-fixed-right "><div id="habla_compressed_div" style="display: block;"></div><div id="habla_panel_div" style="display: block;" class="habla_panel_border hbl_pal_main_bg hbl_pal_panel_border hbl_pal_main_font_family hbl_pal_main_font_size "><div id="habla_both_div" style="display: block;"><div id="habla_topbar_div" class="habla_topbar_div_normal hbl_pal_title_fg hbl_pal_title_bg habla_topbar_div_compressed "><a id="habla_sizebutton_a" class="habla_button habla_button_a_normal hbl_pal_header_font_size hbl_pal_main_font_family hbl_pal_button_bg hbl_pal_button_fg ">^</a><a id="habla_oplink_a" class="habla_oplink_a_normal hbl_pal_header_font_size hbl_pal_title_fg ">¡Contáctenos!</a></div></div><div id="habla_expanded_div" style="display: none;"><div id="habla_middle_div"><div id="habla_middle_wrapper_div"><div id="habla_conversation_div" style="height: 150px; overflow: hidden; display: none;" class="hbl_panel habla_conversation_div hbl_pal_main_height hbl_pal_control_border hbl_pal_main_fg hbl_pal_main_bg   habla_conversation_message_on "><span id="hbl_body_message">¿Alguna pregunta?
+                                                            Es un placer ayudarle.</span></div><div id="habla_offline_message_sent_div" style="display: none;" class="hbl_panel habla_offline_message_sent_div hbl_pal_main_height hbl_pal_control_border hbl_pal_main_fg ">¡Gracias por su mensaje!
+Contestaremos a la brevedad.</div><div id="habla_offline_message_div" style="display: block;" class="hbl_panel habla_offline_message_div hbl_pal_control_border hbl_pal_main_fg "><span id="habla_offline_message_span">Actualmente no estamos disponibles para chatear, pero deje su mensaje y lo atenderemos a la brevedad.</span><div class="hbl_txt_wrapper"><textarea id="habla_name_input" name="habla_name_input" style="height: 20px; display: block;" class="habla_wcsend_field habla_wcsend_input_pre habla_wcsend_input_normal hbl_pal_input_pre_fg hbl_pal_main_font_family hbl_pal_input_font_size hbl_pal_control_border " placeholder="&lt;click aquí&gt; y escriba su nombre"></textarea></div><div class="hbl_txt_wrapper"><textarea id="habla_offline_email_input" name="habla_offline_email_input" style="height: 20px; display: block;" class="habla_wcsend_field habla_wcsend_input_pre habla_wcsend_input_normal hbl_pal_input_pre_fg hbl_pal_main_font_family hbl_pal_input_font_size hbl_pal_control_border " placeholder="&lt;click aquí&gt; y escriba su Email"></textarea></div><div class="hbl_txt_wrapper"><textarea id="habla_offline_phone_input" name="habla_offline_phone_input" style="height: 20px; display: block;" class="habla_wcsend_field habla_wcsend_input_pre habla_wcsend_input_normal hbl_pal_input_pre_fg hbl_pal_main_font_family hbl_pal_input_font_size hbl_pal_control_border " placeholder="&lt;click aquí&gt; y escriba su teléfono"></textarea></div><div class="hbl_txt_wrapper"><textarea id="habla_offline_body_input" name="habla_offline_body_input" style="height: 65px; display: block;" class="habla_wcsend_field habla_wcsend_input_pre habla_wcsend_input_normal hbl_pal_input_pre_fg hbl_pal_main_font_family hbl_pal_input_font_size hbl_pal_control_border " placeholder="Dejenos una nota:"></textarea></div><span id="habla_offline_error_span" class="habla_offline_error_span "></span><input id="habla_offline_submit_input" name="habla_offline_submit_input" type="submit" class="habla_offline_submit_input hbl_pal_offline_submit_fg hbl_pal_control_border hbl_pal_offline_submit_bg " value="Enviarr" style="display: block;"><div id="habla_offline_clear_div" class="clear_style "></div></div><div id="habla_pre_chat_div" style="display: none; height: 150px;" class="hbl_panel habla_pre_chat_div hbl_pal_main_height hbl_pal_main_fg "><span id="habla_pre_chat_span">Hi, I am around, click 'start chatting' to contact me.</span><div class="hbl_txt_wrapper"><textarea id="habla_pre_chat_name_input" name="habla_pre_chat_name_input" style="height: 20px; line-height: 20px;" class="habla_wcsend_field habla_wcsend_input_pre habla_wcsend_input_normal hbl_pal_input_pre_fg hbl_pal_main_font_family hbl_pal_input_font_size hbl_pal_control_border " placeholder="&lt;click aquí&gt; y escriba su nombre"></textarea></div><div class="hbl_txt_wrapper"><textarea id="habla_pre_chat_email_input" name="habla_pre_chat_email_input" style="height: 20px; line-height: 20px;" class="habla_wcsend_field habla_wcsend_input_pre habla_wcsend_input_normal hbl_pal_input_pre_fg hbl_pal_main_font_family hbl_pal_input_font_size hbl_pal_control_border " placeholder="&lt;click aquí&gt; y escriba su Email"></textarea></div><div class="hbl_txt_wrapper" style="display: none;"><textarea id="habla_pre_chat_phone_input" name="habla_pre_chat_phone_input" style="height: 20px; line-height: 20px; display: none;" class="habla_wcsend_field habla_wcsend_input_pre habla_wcsend_input_normal hbl_pal_input_pre_fg hbl_pal_main_font_family hbl_pal_input_font_size hbl_pal_control_border " placeholder="&lt;click aquí&gt; y escriba su teléfono"></textarea></div><span id="habla_pre_chat_error_span"></span><input id="habla_pre_chat_submit_input" name="habla_pre_chat_submit_input" type="submit" class="habla_pre_chat_form_field habla_offline_submit_input hbl_pal_offline_submit_fg hbl_pal_control_border hbl_pal_offline_submit_bg " value="Click here to start chatting"><div id="habla_pre_chat_clear_div" class="clear_style "></div></div></div><form id="habla_chatform_form" action="#" method="GET" autocomplete="off" class="habla_chatform_form " style="display: none;"><div id="habla_input_div" class="habla_input_div "><div class="hbl_txt_wrapper"><textarea id="habla_wcsend_input" name="habla_wcsend_input" size="undefined" style="line-height: 20px; height: 20px; display: none;" class="habla_wcsend_field habla_wcsend_input_pre habla_wcsend_input_normal hbl_pal_input_pre_fg hbl_pal_main_font_family hbl_pal_input_font_size hbl_pal_control_border " placeholder="Escriba aquí y de &lt;enter&gt; para chatear" disabled=""></textarea></div></div></form></div><div style="font-family: helvetica, sans-serif; text-align: center; text-transform: uppercase; font-size: 9px; letter-spacing: 2px; font-weight: bold; padding: 3px 0px 5px !important; color: rgb(170, 170, 170) !important; clear: both;"><span style="display:none"><a id="hblink9" style="font-family: helvetica, sans-serif; text-transform: uppercase; font-size: 9px !important; letter-spacing: 2px; font-weight: bold; color: #e75917 !important;"></a>http://www.olark.com</span>Get <a style="font-family: helvetica, sans-serif; text-transform: uppercase; font-size: 9px !important; letter-spacing: 2px; font-weight: bold; color: #e75917 !important;" href="http://www.olark.com/welcome/?rid=9197-438-10-3080&amp;rid=9197-438-10-3080&amp;sales=1&amp;utm_medium=widget&amp;utm_campaign=free_sales&amp;utm_source=9197-438-10-3080" id="hblink99" target="_blank">Free Olark Sales Chat</a>!</div></div></div><div id="habla_closed_div" style="display: none;"></div></div></div></div></div></div></body></html>
