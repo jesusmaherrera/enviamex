@@ -25,11 +25,13 @@
 <link rel="stylesheet" href="{{STATIC_URL}}/layerslider/skins/glass/skin.css" type="text/css"><script src="http://static.olark.com/jsclient/application.js?v=9675709ce9c9d809d31dca7934c79964" async="" defer=""></script><style type="text/css">.olark-key,#hbl_code,#olark-data{display: none !important;}</style><link id="habla_style_div" type="text/css" rel="stylesheet" href="http://static.olark.com/css/4/1/41a08e61c3f2381b653891a887a3a93e.css?http"><style type="text/css">@media print {#habla_beta_container_do_not_rely_on_div_classes_or_names {display: none !important}}</style></head>
 <body><div style="display: none;" id="olark"><olark><iframe frameborder="0" id="olark-loader"></iframe></olark></div>
 <div id="wrapper">
+  {% block main %}
   <header id="header" class="container-fluid">
+  {% endblock %}
     <div class="header-bg">
     <div class="container">
-      <div class="decoration dec-left visible-desktop"></div>
-      <div class="decoration dec-right visible-desktop"></div>    
+      <div class="decoration dec-left visible-desktop" style="margin-top: 8px;"></div>
+      <div class="decoration dec-right visible-desktop" style="margin-top: 8px;"></div>    
       <div class="row">
         <div id="logo" class="span3"><img src="{{STATIC_URL}}img/logo.png" alt="ENVI-A-MEX"></div>
         <div class="span9">
@@ -64,29 +66,29 @@
         <div class="span12">
           <div class="select-menu hidden-desktop">
             <select id="selectMenu">
-              <option value="index.html">Inicio</option>
-              <option value="servicios.html">- Servicios</option>
-              <option value="envios.html">- Envíos</option>
-              <option value="recepcion.html">- Recepción de paquetes</option>           
-              <option value="dinero.html">Envío de Dinero</option>            
-              <option value="contacto.html">Contáctenos</option>          
+              <option value="/">Inicio</option>
+              <option value="/servicios/">- Servicios</option>
+              <option value="/envios/">- Envíos</option>
+              <option value="/recepcion/">- Recepción de paquetes</option>           
+              <option value="/dinero/">Envío de Dinero</option>            
+              <option value="/contacto/">Contáctenos</option>          
               <option selected="" value="clientes.html">Clientes</option>
             </select>
           </div>
           <ul id="menu" class="visible-desktop">
             <li>
-              <a href="index.html">Inicio</a>
+              <a href="/">Inicio</a>
             </li>
             <li>
-              <a href="servicios.html">Servicios</a>
+              <a href="/servicios/">Servicios</a>
               <ul> 
                 <li><a href="/envios/">Envíos</a></li>
-                <li><a href="recepcion.html">Recepción de paquetes</a></li>
-                <li><a href="dinero.html">Envío de dinero</a></li>
+                <li><a href="/recepcion/">Recepción de paquetes</a></li>
+                <li><a href="/dinero/">Envío de dinero</a></li>
               </ul>
             </li>
              
-            <li><a href="contacto.html">Contactenos</a></li> 
+            <li><a href="/contacto/">Contactenos</a></li> 
             {% if user.is_staff %}
             <li><a href="/clientes/">Clientes</a></li>
             <li>
@@ -163,17 +165,17 @@ olark.identify('9197-438-10-3080');/*]]>*/</script><noscript>&lt;a href="https:/
       <article class="span3 navblock">
         <h3 class="title">Servicios</h3>
         <ul> 
-          <li><a href="envios.html">Envíos a México o cualquier país</a></li>
-          <li><a href="recepcion.html">Recepción de paquetes</a></li>
-          <li><a href="dinero.html">Envío de dinero</a></li>
-          <li><a href="servicios.html">Todos nuestros servicios</a></li>
+          <li><a href="/envios/">Envíos a México o cualquier país</a></li>
+          <li><a href="/recepcion/">Recepción de paquetes</a></li>
+          <li><a href="/dinero/">Envío de dinero</a></li>
+          <li><a href="/servicios/">Todos nuestros servicios</a></li>
         </ul>
       </article>
       <article class="span3 navblock">
         <h3 class="title">Atención a Cliente</h3>
         <ul> 
-          <li><a href="contacto.html">Contáctenos</a></li>
-          <li><a href="contacto.html">Ubicación</a></li>
+          <li><a href="/contacto/">Contáctenos</a></li>
+          <li><a href="/contacto/">Ubicación</a></li>
           <li><a href="clientes.html">Clientes</a></li>
         </ul>
       </article>
@@ -187,7 +189,7 @@ olark.identify('9197-438-10-3080');/*]]>*/</script><noscript>&lt;a href="https:/
   <div class="container">
     <div class="row-fluid">
       <div class="span8 alignleft">ENVI-A-MEX Paisano Inc. | <a href="http://www.conectbit.com">Sitio desarrollado por ConectBIT</a></div>
-      <div class="span4 alignright hidden-phone"><a href="http://www.enviamexpaisano.com">Inicio</a> | <a href="contacto.html">Contacto</a> | <a href="servicios.html">Servicios</a> | <a href="#top" class="top up" style="display: none;">Ir Arriba</a></div>
+      <div class="span4 alignright hidden-phone"><a href="http://www.enviamexpaisano.com">Inicio</a> | <a href="/contacto/">Contacto</a> | <a href="/servicios/">Servicios</a> | <a href="#top" class="top up" style="display: none;">Ir Arriba</a></div>
     </div>
   </div>
 </footer>

@@ -1,4 +1,4 @@
-{% extends "base-index.html" %}
+{% extends "base.html" %}
 {% block title %}Inicio{% endblock %}
 {% block js_code %}
   <script type="text/javascript">
@@ -12,6 +12,9 @@
     });   
   </script>
   {% endblock %}
+{% block main %}
+  <header id="header" class="container-fluid main">
+{% endblock %}
 {% block slider %}
 <div class="span12 main-slider">
           <div id="layerslider-container">  

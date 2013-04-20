@@ -16,6 +16,17 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required, permission_required
 
+def dineroView(request):
+  	return render_to_response('dinero.html', {}, context_instance=RequestContext(request))
+
+def recepcionView(request):
+  	return render_to_response('recepcion.html', {}, context_instance=RequestContext(request))
+
+def serviciosView(request):
+  	return render_to_response('servicios.html', {}, context_instance=RequestContext(request))
+
+def contactoView(request):
+  	return render_to_response('contacto.html', {}, context_instance=RequestContext(request))
 
 def index(request):
   	return render_to_response('index.html', {}, context_instance=RequestContext(request))

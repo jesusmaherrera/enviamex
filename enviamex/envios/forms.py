@@ -34,12 +34,12 @@ class UsarioChangeForm(forms.ModelForm):
     username = forms.RegexField(label="Nombre de Usuario", max_length=30, regex=r'^[\w.@+-]+$',
         help_text = "Maximo. 30 caracteres. letras, digitos y @/./+/-/_ solamente.",
         error_messages = {'invalid': "Este campo solo puede contener letras, numeros y caracteres '@/./+/-/_' "})
-    new_password1 = forms.CharField(label="Nueva contraseña", widget=forms.PasswordInput, required=False)
-    new_password2 = forms.CharField(label="Confirma Nueva Contraseña", widget=forms.PasswordInput, required=False)
-
+    new_password1   = forms.CharField(label="Nueva contraseña", widget=forms.PasswordInput, required=False)
+    new_password2   = forms.CharField(label="Confirma Nueva Contraseña", widget=forms.PasswordInput, required=False)
+    email           = forms.CharField(required=True)
     class Meta(UserChangeForm):
         model = User
-        exclude = ('password', 'last_login', 'date_joined','last_name','first_name','email','is_superuser','groups','user_permissions','is_active',"is_staff",)
+        exclude = ('password', 'last_login', 'date_joined','last_name','first_name','is_superuser','groups','user_permissions','is_active',"is_staff",)
 
     def clean_new_password2(self):
         password1 = self.cleaned_data.get('new_password1')
@@ -69,7 +69,7 @@ class UsarioChangeForm(forms.ModelForm):
 class RegisterForm(UserCreationForm):
     class Meta:
         model = User
-        fields = ("username", )
+        fields = ("username","email" )
 
 class CiudadManageForm(forms.ModelForm):
     class Meta:

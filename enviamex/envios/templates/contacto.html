@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}Contacto{% endblock %}
+
+{% block content %}
+<div class="container">
+		<div id="headline-page">
+			<h1>Contactenos</h1>
+			<div id="crumbs"><a href="index.html">Inicio</a> / <a href="contacto.html" class="active">Contacto</a></div> 
+		</div>
+		<div class="row">
+			<div class="span12">
+				<div class="thumbnail">
+					<iframe width="100%" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.mx/maps/ms?msa=0&amp;msid=216794400280478253916.0004d6cc99fc41b4438a2&amp;hl=es&amp;ie=UTF8&amp;t=h&amp;iwloc=0004d6cca2a3cef8d42f2&amp;ll=28.415449,-106.856766&amp;spn=0,0&amp;output=embed"></iframe><br /><small></small>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span8">
+				<div class="title"><h2>Cualquier duda o aclaración, llene el formulario.</h2></div>
+				<p><strong>Envíe su mensaje</strong>. Lo contestaremos a la brevedad.</p>
+<form id="form1" name="form1" method="post" action="enviar.php">
+  <label> Ingrese su nombre <br />
+  <input name="nombre" type="text" id="nombre" class="form-text" />
+  <br />
+  </label> 
+  <p>Su dirección Email<br />
+    <input name="email" type="text" id="email" class="form-text" />
+  </p>
+  <p>Su Número de teléfono <br />
+    <input name="telefono" type="text" id="telefono" class="form-text" />
+</p>
+  <p>Tipo de contacto<br />
+    <label>
+    <select name="tipo" id="tipo" class="form-text" >
+      <option value="Ventas">Ventas</option>
+      <option value="Preguntas">Preguntas</option>
+      <option value="Comentario">Comentario</option>
+    </select>
+    </label> 
+   </p>
+  <p>
+    <label>Mensaje<br />
+    <textarea name="mensaje" cols="30" rows="3" id="mensaje"></textarea>
+    </label>
+</p>
+  <p>
+    <label>
+    <input class="button red small" type="submit" name="Submit" value="Enviar mensaje" />
+    </label>
+  </p>
+</form>
+				<div id="form-message"></div>
+			</div>
+			<div class="span4">
+				<div class="headline"><h4>Destalles de contacto</h4></div>
+				<div class="card">
+					<span class="contact-line c1">Av. Hidalgo #2565, Centro, Cd. Cuauhtémoc, Chih. Mex.</span>
+					<span class="contact-line c2">Llámenos:  <a href="#call">+52(625) 5811892</a></span>
+					<span class="contact-line c3"><a href="mailto:info@enviamexpaisano.com">info@enviamexpaisano.com</a></span>
+				</div>
+				<div class="headline"><h4>Redes Sociales</h4></div>
+				<ul class="social-icons">
+					<li class="facebook"><a href="https://www.facebook.com/EnviamexPaisanoInc">Facebook</a></li>
+					<li class="twitter"><a href="https://twitter.com/EnviamexPaisano">Twitter</a></li>
+				</ul>	
+			</div>
+	</div>
+	</section>
+</div>
+{% endblock %}

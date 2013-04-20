@@ -33,6 +33,11 @@ urlpatterns = patterns('',
     (r'^ciudad/(?P<id>\d+)/', 'envios.views.ciudad_manageView'),
     (r'^ciudad/delete/(?P<id>\d+)/', 'envios.views.ciudad_deleteView'),
 
+    (r'^contacto/$', 'envios.views.contactoView'),
+    (r'^servicios/$', 'envios.views.serviciosView'),
+    (r'^recepcion/$', 'envios.views.recepcionView'),
+    (r'^dinero/$', 'envios.views.dineroView'),
+    
     # url(r'^enviamex/', include('enviamex.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
